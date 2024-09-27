@@ -15,7 +15,7 @@ public class RemoteConfigExample : MonoBehaviour
     public float EnemyHP;
     public float playerSpeed;
     public string enemyName;
-    public int playerLife;
+    public int actualLife;
     public string playerName;
 
 
@@ -54,7 +54,7 @@ public class RemoteConfigExample : MonoBehaviour
         }
 
         RemoteConfigService.Instance.FetchCompleted += ApplyRemoteSettings;
-        RemoteConfigService.Instance.FetchCompleted += GetCoins;
+        
 
         RemoteConfigService.Instance.FetchConfigs(new userAttributes(), new appAttributes());
     }
@@ -67,11 +67,8 @@ public class RemoteConfigExample : MonoBehaviour
         playerSpeed = RemoteConfigService.Instance.appConfig.GetFloat("PlayerSpeed");
         enemyName = RemoteConfigService.Instance.appConfig.GetString("EnemyName");
         playerName = RemoteConfigService.Instance.appConfig.GetString("PlayerName");
-        playerLife = RemoteConfigService.Instance.appConfig.GetInt("PlayerLife");
+        actualLife = RemoteConfigService.Instance.appConfig.GetInt("ActualLife");
     }
 
-    void GetCoins(ConfigResponse configResponse)
-    {
-
-    }
+    
 }

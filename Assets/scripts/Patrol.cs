@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Patroll : Enemy
 {
-    [SerializeField] Transform[] waypoints;  // Puntos de patrullaje
-    [SerializeField] float patrolSpeed = 2f; // Velocidad de patrullaje
-    [SerializeField] Transform player;       // Referencia al jugador
+    [SerializeField] Transform[] waypoints;  
+    [SerializeField] float patrolSpeed = 2f; 
+    [SerializeField] Transform player;      
 
     private int currentWaypointIndex = 0;
 
@@ -14,7 +14,7 @@ public class Patroll : Enemy
     {
         base.Update();
 
-        // Continuar patrullando
+       
         Patrol();
     }
 
@@ -23,26 +23,26 @@ public class Patroll : Enemy
         Vector3 targetWaypoint = waypoints[currentWaypointIndex].position;
         Vector3 direction = (targetWaypoint - transform.position).normalized;
 
-        // Mueve al enemigo hacia el waypoint
+        
         AddForce(direction * patrolSpeed);
 
-        // Verifica si ha llegado al waypoint
+        
         if (Vector3.Distance(transform.position, targetWaypoint) < 0.5f)
         {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; // Cambia al siguiente waypoint
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; 
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnCollisionEnter(Collision collision)
     {
-        // Aquí manejamos la colisión con el jugador
-        if (other.CompareTag("Player"))
+        if (CompareTag("Player"))
         {
-            Player playerScript = other.GetComponent<Player>();
+            Player playerScript = GetComponent<Player>();
             if (playerScript != null)
             {
-                playerScript.Actuallife -= 1; // Resta 1 de vida al jugador
-                playerScript.UpdateHealthBar(); // Actualiza la barra de salud
+                playerScript.Actuallife -= 1; 
+                playerScript.UpdateHealthBar(); 
                 Debug.Log("Enemigo tocó al jugador. Vida restante: " + playerScript.Actuallife);
             }
         }

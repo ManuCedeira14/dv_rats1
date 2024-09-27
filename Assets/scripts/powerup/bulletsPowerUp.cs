@@ -12,25 +12,25 @@ public class bulletsPowerUp : PowerUp
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
-    protected void addBullets()
-    {
-        if (_player != null)
-        {
-            _player.totalBullets += 50;
+    //protected void addBullets()
+    //{
+    //    if (_player != null)
+    //    {
+    //        _player.totalBullets += 50;
             
-        }
-    }
+    //    }
+    //}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            _pickedUp = true;
-            addBullets();
-            DestroyPowerUp();
-            Debug.Log("Power-up pickeado");
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        _pickedUp = true;
+    //        addBullets();
+    //        DestroyPowerUp();
+    //        Debug.Log("Power-up pickeado");
+    //    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {

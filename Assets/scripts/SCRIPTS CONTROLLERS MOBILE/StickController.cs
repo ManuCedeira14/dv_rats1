@@ -7,7 +7,7 @@ public class StickController : Controller, IDragHandler, IEndDragHandler
 {
     private Vector3 _initialPosition;
     [SerializeField, Range(50, 200)] private float maxMagnitude;
-    [SerializeField] private float _jumpForce;
+    
 
 
     private void Start()

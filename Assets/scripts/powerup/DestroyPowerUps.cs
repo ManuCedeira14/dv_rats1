@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class DestroyPowerUps : lifePowerUp
 {
+    public DestroyPowerUps()
+    {
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !_pickedUp)
+        if (RemoteConfigExample.Instance.actualLife < player._maxLife && other.CompareTag("Player") && !_pickedUp)
         {
             _pickedUp = true;
             DestroyPowerUp();
-            Debug.Log("Power-up pickeado");
+            Debug.Log("base Power-up pickeado");
         }
     }
 }

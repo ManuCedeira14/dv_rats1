@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class lifePowerUp : PowerUp
 {
-    private Player player;
+    protected Player player;
     private int lifeToAdd = 1;  
 
     private void Start()
@@ -32,7 +32,8 @@ public class lifePowerUp : PowerUp
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !_pickedUp)
+
+        if (player.Actuallife < player._maxLife && other.CompareTag("Player") && !_pickedUp)
         {
             _pickedUp = true;
             addLife();
