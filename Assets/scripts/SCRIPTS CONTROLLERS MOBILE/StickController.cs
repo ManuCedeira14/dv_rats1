@@ -22,7 +22,11 @@ public class StickController : Controller, IDragHandler, IEndDragHandler
 
         return finalDirection;
     }
-    
+
+    public override Vector3 GetJump()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void OnDrag(PointerEventData eventData)
     {

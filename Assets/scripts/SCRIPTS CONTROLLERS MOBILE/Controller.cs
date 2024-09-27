@@ -7,5 +7,6 @@ public abstract class Controller : MonoBehaviour
     protected Vector3 _moveDir;
 
     public abstract Vector3 GetMovement();
+    public abstract Vector3 GetJump();
     
 }

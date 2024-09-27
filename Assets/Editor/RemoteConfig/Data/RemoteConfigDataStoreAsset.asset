@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"9b4adbc6-fa72-4be5-aecf-21db2a971468\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \" EnemyHP\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"eac29920-be0c-4060-a8cd-f35dc2c27f33\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Patrulla\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"83be1739-3b6e-48cd-bf2b-c55b8e9598aa\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerLife\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"22e6de17-5d17-48e2-b7dc-f63dabe60b89\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PlayerName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"John\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"dd917488-0c23-47ce-9229-62b479365ad9\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 20.0\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"9b4adbc6-fa72-4be5-aecf-21db2a971468\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \" EnemyHP\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"eac29920-be0c-4060-a8cd-f35dc2c27f33\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Patrulla\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"83be1739-3b6e-48cd-bf2b-c55b8e9598aa\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerLife\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"22e6de17-5d17-48e2-b7dc-f63dabe60b89\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"PlayerName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"John\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"dd917488-0c23-47ce-9229-62b479365ad9\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 20.0\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"8a4fd528-47cb-43fe-8b07-10cbb3302907\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"cd354ebf-59bc-4301-b624-2fd4f2e9eef5\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2024-09-15T23:08:07Z\",\r\n    \"updatedAt\":
+    \"2024-09-15T23:08:07Z\"\r\n  }\r\n]"

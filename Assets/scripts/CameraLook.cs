@@ -22,4 +22,5 @@ public class CameraLook : MonoBehaviour
         Player.Rotate(Vector3.up * XMove);
         
     }
+
 }

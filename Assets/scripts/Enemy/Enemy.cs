@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
     protected Vector3 _velocity;
     public Vector3 Velocity { get { return _velocity; } }
 
+    protected virtual void Start()
+    {
+        
+        _velocity = Vector3.zero;
+    }
     protected virtual void Update()
     {
         transform.position += _velocity * Time.deltaTime;

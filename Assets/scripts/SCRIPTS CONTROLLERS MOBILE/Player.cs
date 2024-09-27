@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Slider healthBar;
 
+    
+    
+
     private void Start()
     {
         Actuallife = 2;
@@ -22,21 +25,21 @@ public class Player : MonoBehaviour
             healthBar.maxValue = _maxLife;
             healthBar.value = Actuallife;
         }
+      
     }
-    void Update()
+    void FixedUpdate()
     {
         MovePlayer();
         
     }
 
     void MovePlayer()
-
     {
-        rb.velocity = controller.GetMovement() * speed;
+        Vector3 finalVel = new Vector3(controller.GetMovement().x, 0, controller.GetMovement().z) ; 
+        rb.velocity += finalVel * speed *Time.deltaTime;
     }
     void UpdateHealthBar()
     {
-        
         healthBar.value = Actuallife;
     }
     
