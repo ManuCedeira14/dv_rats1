@@ -13,24 +13,47 @@ public class Player : MonoBehaviour
     [SerializeField] public int bullets = 20;
     [SerializeField] public int totalBullets = 150;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Slider healthBar;
+    [SerializeField] private Slider healthBar;  // Barra de vida
     [SerializeField] private Transform cameraTransform;
+
+    private bool isInitialized = false;
 
     private void Start()
     {
-        Actuallife = 2;
+        StartCoroutine(InitializePlayer());
+    }
+
+    IEnumerator InitializePlayer()
+    {
+        // Esperar hasta que el valor remoto esté disponible
+        while (RemoteConfigExample.Instance == null || RemoteConfigExample.Instance.actualLife == 0)
+        {
+            yield return null;  // Esperar un frame
+        }
+
+        // Asignar los valores de RemoteConfig
+        Actuallife = RemoteConfigExample.Instance.actualLife;
+        speed = RemoteConfigExample.Instance.playerSpeed;
+
         if (healthBar != null)
         {
             healthBar.maxValue = _maxLife;
-            healthBar.value = Actuallife;
+            UpdateHealthBar();  // Actualizar la barra de vida al iniciar
         }
+
+        isInitialized = true;
     }
 
     void Update()
     {
+        if (!isInitialized) return;
+
         MovePlayer();
-        if (Actuallife == 0)
+
+        if (Actuallife <= 0)
+        {
             SceneManager.LoadScene(3);
+        }
     }
 
     void MovePlayer()
@@ -53,7 +76,10 @@ public class Player : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        healthBar.value = Actuallife;
+        if (healthBar != null)
+        {
+            healthBar.value = Actuallife;
+        }
     }
 
     public void Heal(int healAmount)
@@ -61,9 +87,6 @@ public class Player : MonoBehaviour
         Actuallife += healAmount;
         Actuallife = Mathf.Clamp(Actuallife, 0, _maxLife);
 
-        if (healthBar != null)
-        {
-            UpdateHealthBar();
-        }
+        UpdateHealthBar();  // Llamar a la actualización de la barra de vida
     }
 }

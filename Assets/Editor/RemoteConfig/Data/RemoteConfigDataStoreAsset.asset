@@ -12,32 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4d8aaebe-cc14-40a3-8c54-238a65eda7f0\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \" EnemyHP\",\r\n      \"type\": \"float\",\r\n     
-    \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"052837be-275d-451e-88dc-58c27599beb7\"\r\n    },\r\n    \"rs\": {\r\n     
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"34a35dc0-53be-4f60-8797-ff307929338a\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"JumpForce\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 27.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"8e548455-9f0f-4a6f-81ea-839e385582cb\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Patrulla\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"029c79c8-0ca3-4264-9832-5a528cc77b49\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4ec5bd2f-93b0-421e-a66f-624087cf475f\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"ActualLife\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"6a4478cf-a69e-42d2-bb4d-1906128d9047\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"49c3138c-6cb6-41d0-9fe6-5f788fc57aca\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Player\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"72c93cfc-502f-4cf2-b67e-2e697eb042d1\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a3fa14d9-9c90-4b9f-954e-b80ce5d34baa\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
-    \"value\": 70.0\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4d8aaebe-cc14-40a3-8c54-238a65eda7f0\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \" EnemyHP\",\r\n      \"type\": \"float\",\r\n     
-    \"value\": 5.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"052837be-275d-451e-88dc-58c27599beb7\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"value\": 25.0\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"34a35dc0-53be-4f60-8797-ff307929338a\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"JumpForce\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 27.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"8e548455-9f0f-4a6f-81ea-839e385582cb\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Patrulla\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"029c79c8-0ca3-4264-9832-5a528cc77b49\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4ec5bd2f-93b0-421e-a66f-624087cf475f\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"ActualLife\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"6a4478cf-a69e-42d2-bb4d-1906128d9047\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"49c3138c-6cb6-41d0-9fe6-5f788fc57aca\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Player\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"72c93cfc-502f-4cf2-b67e-2e697eb042d1\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a3fa14d9-9c90-4b9f-954e-b80ce5d34baa\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
-    \"value\": 70.0\r\n    }\r\n  }\r\n]"
+    \"value\": 25.0\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"8a4fd528-47cb-43fe-8b07-10cbb3302907\",\r\n   
     \"name\": \"production\",\r\n    \"id\": \"cd354ebf-59bc-4301-b624-2fd4f2e9eef5\",\r\n   
     \"isDefault\": true,\r\n    \"createdAt\": \"2024-09-15T23:08:07Z\",\r\n    \"updatedAt\":

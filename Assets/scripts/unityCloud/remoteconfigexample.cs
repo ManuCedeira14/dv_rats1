@@ -1,4 +1,3 @@
-
 using System.Threading.Tasks;
 using Unity.Services.RemoteConfig;
 using Unity.Services.Authentication;
@@ -12,12 +11,11 @@ public class RemoteConfigExample : MonoBehaviour
 
     public static RemoteConfigExample Instance;
 
-    public float EnemyHP;
+    public float jumpForce;
     public float playerSpeed;
     public string enemyName;
     public int actualLife;
     public string playerName;
-
 
     private void Awake()
     {
@@ -34,10 +32,10 @@ public class RemoteConfigExample : MonoBehaviour
 
     async Task InitializeRemoteConfigAsync()
     {
-        // initialize handlers for unity game services
+        // Initialize Unity Services
         await UnityServices.InitializeAsync();
 
-        // remote config requires authentication for managing environment information
+        // Authentication is required for Remote Config
         if (!AuthenticationService.Instance.IsSignedIn)
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
@@ -46,16 +44,12 @@ public class RemoteConfigExample : MonoBehaviour
 
     async Task Start()
     {
-        // initialize Unity's authentication and core services, however check for internet connection
-        // in order to fail gracefully without throwing exception if connection does not exist
         if (Utilities.CheckForInternetConnection())
         {
             await InitializeRemoteConfigAsync();
         }
 
         RemoteConfigService.Instance.FetchCompleted += ApplyRemoteSettings;
-        
-
         RemoteConfigService.Instance.FetchConfigs(new userAttributes(), new appAttributes());
     }
 
@@ -63,12 +57,18 @@ public class RemoteConfigExample : MonoBehaviour
     {
         Debug.Log("RemoteConfigService.Instance.appConfig fetched: " + RemoteConfigService.Instance.appConfig.config.ToString());
 
-        EnemyHP = RemoteConfigService.Instance.appConfig.GetFloat("EnemyHP");
+        jumpForce = RemoteConfigService.Instance.appConfig.GetFloat("JumpForce");
         playerSpeed = RemoteConfigService.Instance.appConfig.GetFloat("PlayerSpeed");
         enemyName = RemoteConfigService.Instance.appConfig.GetString("EnemyName");
         playerName = RemoteConfigService.Instance.appConfig.GetString("PlayerName");
         actualLife = RemoteConfigService.Instance.appConfig.GetInt("ActualLife");
-    }
 
-    
+        // Actualizar los valores del Player con las configuraciones remotas
+        Player player = FindObjectOfType<Player>();
+        if (player != null)
+        {
+            player.Actuallife = actualLife;
+            player.speed = playerSpeed;
+        }
+    }
 }

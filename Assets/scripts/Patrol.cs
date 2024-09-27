@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Patroll : Enemy
 {
-    [SerializeField] Transform[] waypoints;  
-    [SerializeField] float patrolSpeed = 2f; 
-    [SerializeField] Transform player;      
+    [SerializeField] Transform[] waypoints;   
+    [SerializeField] float patrolSpeed = 2f;  
+    [SerializeField] float pursuitSpeed = 4f; 
+    [SerializeField] Transform player;       
+    [SerializeField] float attackRange = 5f;  
 
     private int currentWaypointIndex = 0;
 
@@ -14,8 +16,15 @@ public class Patroll : Enemy
     {
         base.Update();
 
-       
-        Patrol();
+        
+        if (Vector3.Distance(transform.position, player.position) <= attackRange)
+        {
+            Pursuit();
+        }
+        else
+        {
+            Patrol();
+        }
     }
 
     private void Patrol()
@@ -26,25 +35,39 @@ public class Patroll : Enemy
         
         AddForce(direction * patrolSpeed);
 
-        
+       
         if (Vector3.Distance(transform.position, targetWaypoint) < 0.5f)
         {
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; 
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         }
     }
 
-    
+    private void Pursuit()
+    {
+        
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+
+        
+        AddForce(directionToPlayer * pursuitSpeed);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
-            Player playerScript = GetComponent<Player>();
+            Player playerScript = collision.collider.GetComponent<Player>();
             if (playerScript != null)
             {
-                playerScript.Actuallife -= 1; 
-                playerScript.UpdateHealthBar(); 
+                playerScript.Actuallife -= 1;
+                playerScript.UpdateHealthBar();
                 Debug.Log("Enemigo tocó al jugador. Vida restante: " + playerScript.Actuallife);
             }
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

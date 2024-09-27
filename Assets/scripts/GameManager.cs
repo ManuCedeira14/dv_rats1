@@ -12,11 +12,7 @@ public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         SceneManager.LoadSceneAsync(1);
     }
-    public void WonScene()
-    {
-        if (winStar.starGrabbed)
-            SceneManager.LoadScene(3);
-    }
+    
     public void OnPointerDown(PointerEventData eventData)
     {
         NextScene();

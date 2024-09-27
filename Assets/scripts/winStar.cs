@@ -6,15 +6,23 @@ using UnityEngine.SceneManagement;
 public class winStar : MonoBehaviour
 {
     [SerializeField] public bool starGrabbed;
-    GameManager Gm;
+
+    private void Awake()
+    {
+        starGrabbed = false;
+    }
     public void OnTriggerEnter(Collider other)
     {
-        if (CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             starGrabbed = true;
             Destroy(gameObject);
-            Gm.WonScene();
+            WonScene();
         }
     }
-    
+    public void WonScene()
+    {
+        if (starGrabbed)
+            SceneManager.LoadScene(3);
+    }
 }

@@ -5,45 +5,31 @@ using UnityEngine;
 public class ReducerSpeed : MonoBehaviour
 {
     public float reducedSpeed = 5f;
-
     private float originalSpeed;
+    private Player player;
 
-   
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("Player"))
         {
-            
-            Player playerMovement = other.GetComponent<Player>();
+            player = other.GetComponent<Player>();
 
-           
-            if (playerMovement != null)
+            if (player != null)
             {
-                
-                originalSpeed = playerMovement.speed;
-
-                
-                playerMovement.speed = reducedSpeed;
+                originalSpeed = player.speed;
+                player.Actuallife--;
+                player.UpdateHealthBar();
+                player.speed = reducedSpeed;
             }
         }
     }
 
-    
     private void OnTriggerExit(Collider other)
     {
-        
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && player != null)
         {
-            
-            Player playerMovement = other.GetComponent<Player>();
-
-            
-            if (playerMovement != null)
-            {
-                
-                playerMovement.speed = originalSpeed;
-            }
+            player.speed = originalSpeed;
+            player = null;
         }
     }
 }

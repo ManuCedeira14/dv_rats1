@@ -9,7 +9,7 @@ public class lifePowerUp : PowerUp
 
     private void Start()
     {
-       
+        
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         if (player == null)
         {
