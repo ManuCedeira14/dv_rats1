@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class lifePowerUp : PowerUp
 {
-    protected Player player;
+    //protected Player player;
+    protected PlayerModel player;
     private int lifeToAdd = 1;  
 
     private void Start()
     {
         
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        //player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerModel>();
         if (player == null)
         {
             Debug.Log("no hay tag player");
@@ -22,10 +24,10 @@ public class lifePowerUp : PowerUp
         if (player != null)
         {
            
-            if (player.Actuallife < player._maxLife)
+            if (player.currentHealth < player.maxHealth)
             {
                 player.Heal(lifeToAdd);  
-                Debug.Log("Actual life: " + player.Actuallife);
+                Debug.Log("Actual life: " + player.currentHealth);
             }
         }
     }
@@ -33,7 +35,7 @@ public class lifePowerUp : PowerUp
     private void OnTriggerEnter(Collider other)
     {
 
-        if (player.Actuallife < player._maxLife && other.CompareTag("Player") && !_pickedUp)
+        if (player.currentHealth < player.maxHealth && other.CompareTag("Player") && !_pickedUp)
         {
             _pickedUp = true;
             addLife();
