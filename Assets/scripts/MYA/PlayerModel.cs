@@ -18,7 +18,6 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
     [SerializeField] private Slider _healthBar;
-    
 
     IController _controller;
     PlayerView _PV;
@@ -29,7 +28,6 @@ public class PlayerModel : MonoBehaviour
     public event Action OnTakeDamage = delegate { };
     public event Action OnDeath = delegate { };
 
-
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -38,11 +36,13 @@ public class PlayerModel : MonoBehaviour
 
         currentHealth = maxHealth;
     }
-    
+
     private void Update()
     {
         _controller.ControllerUpdate();
         UpdateHealthBar(currentHealth);
+        CheckGround(); // Verificar si el jugador está en el suelo
+        Death();
     }
 
     private void FixedUpdate()
@@ -62,30 +62,33 @@ public class PlayerModel : MonoBehaviour
 
     public void Jump()
     {
-       
+        if (canJump)
+        {
             _rb.AddForce(Vector3.up * forceJump, ForceMode.VelocityChange);
+            canJump = false; // Evitar saltos consecutivos sin tocar el suelo
+            OnJump();
+        }
     }
 
-    public void TakeDamage(int dmg)
+    private void CheckGround()
     {
-        currentHealth -= dmg;
-
-        OnLifeUpdate(currentHealth / (float)maxHealth);
-
-        if (currentHealth <= 0)
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, checkDistance, groundLayer))
         {
-            Death();
+            canJump = true; // Si está en el suelo, puede saltar
         }
         else
         {
-            OnTakeDamage();
+            canJump = false; // Si no está en el suelo, no puede saltar
         }
     }
+
     public void UpdateHealthBar(int _currentHealth)
     {
         _healthBar.value = _currentHealth;
-        Debug.Log("vida actual"  + _currentHealth);
+        Debug.Log("vida actual" + _currentHealth);
     }
+
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
@@ -93,26 +96,16 @@ public class PlayerModel : MonoBehaviour
 
         UpdateHealthBar(currentHealth);
     }
+
     void Death()
     {
-        Debug.Log("RIP");
-        enabled = false;
-        SceneManager.LoadScene(2);
+        if (currentHealth <= 0)
+        {
+            Debug.Log("RIP");
+            enabled = false;
+            SceneManager.LoadScene(2);
+        }
 
         OnDeath();
-    }
-
-    private void CheckGroundDistance()
-    {
-        Collider[] colliders = Physics.OverlapSphere(_rb.position, checkDistance, groundLayer);
-
-        if (colliders.Length > 0)
-        {
-            canJump = true;
-        }
-        else
-        {
-            canJump = false;
-        }
     }
 }

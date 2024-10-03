@@ -4,20 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class GameManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class GameManager : MonoBehaviour
 {
-    Player player;
-    winStar winStar;
+    PlayerModel player;
+    
     public void NextScene()
     {
-        SceneManager.LoadSceneAsync(1);
+         SceneManager.LoadSceneAsync(1);
     }
-    
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        NextScene();
-    }
-    public void OnPointerUp(PointerEventData eventData)
-    { 
-    }
+ 
 }

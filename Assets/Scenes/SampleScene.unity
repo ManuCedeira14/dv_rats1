@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe34036c360935e428b1a8c0daafb5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reducedSpeed: 3
+  reducedSpeed: 12
 --- !u!65 &261100779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 448037369}
   - component: {fileID: 448037370}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerMYA
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2154,14 +2154,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  forceJump: 10
+  forceJump: 11
   maxHealth: 5
   currentHealth: 5
   canJump: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  checkDistance: 1
+  checkDistance: 5
   _healthBar: {fileID: 1085225685}
 --- !u!65 &448037367
 BoxCollider:
@@ -2182,8 +2182,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.7903924, z: 1}
+  m_Center: {x: 0, y: 0.20123163, z: 0}
 --- !u!4 &448037368
 Transform:
   m_ObjectHideFlags: 0
@@ -8086,7 +8086,7 @@ MonoBehaviour:
   - {fileID: 1214403942}
   patrolSpeed: 2
   pursuitSpeed: 4
-  player: {fileID: 609696456}
+  player: {fileID: 448037368}
   attackRange: 15.75
 --- !u!136 &1736933544
 CapsuleCollider:
@@ -8779,7 +8779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe34036c360935e428b1a8c0daafb5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reducedSpeed: 3
+  reducedSpeed: 12
 --- !u!1 &1864739393
 GameObject:
   m_ObjectHideFlags: 0
@@ -10057,7 +10057,7 @@ Transform:
   m_GameObject: {fileID: 2111047147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1.7883, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45360,7 +45360,7 @@ GameObject:
   - component: {fileID: 8579079932765991106}
   - component: {fileID: 8579079932765991105}
   - component: {fileID: 8579079932765991104}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: polySurface1695
   m_TagString: Ground
   m_Icon: {fileID: 0}

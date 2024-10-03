@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ReducerSpeed : MonoBehaviour
 {
-    public float reducedSpeed = 5f;
+    public float reducedSpeed;
     private float originalSpeed;
     //private Player player;
     private PlayerModel _player;
 
     private void Start()
     {
-        originalSpeed = 15f;
+        originalSpeed = 20f;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,7 +35,7 @@ public class ReducerSpeed : MonoBehaviour
         {
             Debug.Log("salio del trigger");
             _player.speed = originalSpeed;
-            _player = null;
+            
         }
     }
 }
