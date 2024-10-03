@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
         if (Actuallife <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
 

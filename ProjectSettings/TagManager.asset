@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Potion
+  - Key
   layers:
   - Default
   - TransparentFX
