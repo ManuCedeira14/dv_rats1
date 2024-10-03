@@ -10,7 +10,7 @@ public class DestroyPowerUps : lifePowerUp
 
     private void OnTriggerEnter(Collider other)
     {
-        if (player.currentHealth < player.maxHealth && other.CompareTag("Player") && !_pickedUp)
+        if (player.Actuallife < player._maxLife && other.CompareTag("Player") && !_pickedUp)
         {
             _pickedUp = true;
             DestroyPowerUp();
