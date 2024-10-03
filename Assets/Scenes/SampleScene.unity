@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe34036c360935e428b1a8c0daafb5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reducedSpeed: 5
+  reducedSpeed: 3
 --- !u!65 &261100779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8779,7 +8779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe34036c360935e428b1a8c0daafb5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reducedSpeed: 5
+  reducedSpeed: 3
 --- !u!1 &1864739393
 GameObject:
   m_ObjectHideFlags: 0

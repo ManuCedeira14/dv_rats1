@@ -6,30 +6,36 @@ public class ReducerSpeed : MonoBehaviour
 {
     public float reducedSpeed = 5f;
     private float originalSpeed;
-    private Player player;
+    //private Player player;
+    private PlayerModel _player;
 
+    private void Start()
+    {
+        originalSpeed = 15f;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            player = other.GetComponent<Player>();
+            _player = other.GetComponent<PlayerModel>();
 
-            if (player != null)
+            if (_player != null)
             {
-                originalSpeed = player.speed;
-                player.Actuallife--;
-                player.UpdateHealthBar();
-                player.speed = reducedSpeed;
+                
+                _player.currentHealth--;
+                _player.UpdateHealthBar(_player.currentHealth);
+                _player.speed = reducedSpeed;
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && player != null)
+        if (other.CompareTag("Player") && _player != null)
         {
-            player.speed = originalSpeed;
-            player = null;
+            Debug.Log("salio del trigger");
+            _player.speed = originalSpeed;
+            _player = null;
         }
     }
 }

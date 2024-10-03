@@ -81,7 +81,7 @@ public class PlayerModel : MonoBehaviour
             OnTakeDamage();
         }
     }
-    void UpdateHealthBar(int _currentHealth)
+    public void UpdateHealthBar(int _currentHealth)
     {
         _healthBar.value = _currentHealth;
         Debug.Log("vida actual"  + _currentHealth);
