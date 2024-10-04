@@ -21,9 +21,9 @@ public class ReducerSpeed : MonoBehaviour
 
             if (_player != null)
             {
-                _player.TakeDamage(1); // Aquí se aplica un daño de 1, ajusta si es necesario
+                _player.TakeDamage(1); 
 
-                // Reducir la velocidad del jugador
+               
                 _player.speed = reducedSpeed;
 
                 //_player._currentHealth--;

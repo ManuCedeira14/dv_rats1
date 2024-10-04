@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2191,7 +2191,7 @@ Transform:
   m_GameObject: {fileID: 448037364}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -422.39, y: 3.74, z: 13.82}
+  m_LocalPosition: {x: -248.7, y: 39.7, z: 29.2}
   m_LocalScale: {x: 5.9313064, y: 5.303112, z: 6.6296835}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2225,7 +2225,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 3
+  m_CollisionDetection: 1
 --- !u!114 &448037370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2250,8 +2250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67047d5478742f141bbb284c5da13c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxLife: 5
-  _currentLife: 0
+  maxLife: 5
+  currentLife: 5
+  healthSlider: {fileID: 1085225685}
 --- !u!1 &529537519
 GameObject:
   m_ObjectHideFlags: 0
@@ -8792,7 +8793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe34036c360935e428b1a8c0daafb5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reducedSpeed: 12
+  reducedSpeed: 10
 --- !u!1 &1864739393
 GameObject:
   m_ObjectHideFlags: 0
@@ -10056,7 +10057,7 @@ GameObject:
   - component: {fileID: 2111047149}
   m_Layer: 0
   m_Name: Mesh
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
