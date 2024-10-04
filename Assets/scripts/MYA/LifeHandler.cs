@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 //mio
 public class LifeHandler : MonoBehaviour
 {
     [SerializeField] public float _maxLife = 5f;
     [SerializeField] public float _currentLife;
-    public float MaxLife => _maxLife; // Propiedad para acceso a _maxLife
+    public float MaxLife => _maxLife; 
     public float CurrentLife => _currentLife;
 
-    // Evento para notificar cuando la vida cambia
+
     public event Action<float> OnLifeChanged = delegate { };
-    // Evento para notificar cuando el jugador muere
+
     public event Action OnDead = delegate { };
 
     private void Awake()
@@ -26,8 +27,11 @@ public class LifeHandler : MonoBehaviour
         _currentLife -= dmg;
         Debug.Log($"Current life = {_currentLife}");
 
-        // Llamar al evento de vida cambiada
-        OnLifeChanged(_currentLife);
+        if (OnLifeChanged != null)
+        {
+            OnLifeChanged(_currentLife);  
+            Debug.Log("Evento OnLifeChanged disparado");
+        }
 
         if (_currentLife <= 0)
         {
@@ -40,15 +44,18 @@ public class LifeHandler : MonoBehaviour
         _currentLife += amount;
         _currentLife = Mathf.Clamp(_currentLife, 0, _maxLife);
 
-        // Llamar al evento de vida cambiada
-        OnLifeChanged(_currentLife);
+        if (OnLifeChanged != null)
+        {
+            OnLifeChanged(_currentLife);  
+            Debug.Log("Evento OnLifeChanged disparado (Heal)");
+        }
     }
 
     void Dead()
     {
         Debug.Log("Player is dead");
+        SceneManager.LoadScene(2);
 
-        // Llamar al evento de muerte
         OnDead();
     }
 }

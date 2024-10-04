@@ -6,16 +6,18 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
 
-    private void Start()
+    public void Initialize(LifeHandler lifeHandler)
     {
-        LifeHandler lifeHandler = FindObjectOfType<LifeHandler>();
         if (lifeHandler != null)
         {
-            // Suscribirse al evento de cambio de vida
             lifeHandler.OnLifeChanged += UpdateHealthBar;
 
-            // Inicializar la barra de vida con el valor máximo
-            MaxHealth((int)lifeHandler._maxLife);
+            MaxHealth((int)lifeHandler.MaxLife);
+            Debug.Log("Suscrito a OnLifeChanged y barra de vida inicializada");
+        }
+        else
+        {
+            Debug.LogError("No se encontró LifeHandler para suscribirse");
         }
     }
 
@@ -25,10 +27,10 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
     }
 
-    // Método para actualizar la barra de vida cuando el evento es disparado
     public void UpdateHealthBar(float currentLife)
     {
         slider.value = currentLife;
+        Debug.Log("Barra de vida actualizada: " + currentLife);
     }
 
     private void OnDestroy()
@@ -36,7 +38,6 @@ public class HealthBar : MonoBehaviour
         LifeHandler lifeHandler = FindObjectOfType<LifeHandler>();
         if (lifeHandler != null)
         {
-            // Desuscribirse del evento de cambio de vida cuando el objeto se destruye
             lifeHandler.OnLifeChanged -= UpdateHealthBar;
         }
     }

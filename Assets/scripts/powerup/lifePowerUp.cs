@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class lifePowerUp : PowerUp
 {
-    //protected Player player;
     protected PlayerModel player;
     private int lifeToAdd = 1;  
 
     private void Start()
     {
         
-        //player = GameObject.FindWithTag("Player").GetComponent<Player>();
         player = GameObject.FindWithTag("Player").GetComponent<PlayerModel>();
         if (player == null)
         {
