@@ -21,13 +21,7 @@ public class ReducerSpeed : MonoBehaviour
             if (_player != null)
             {
                 _player.TakeDamage(1); 
-<<<<<<< HEAD
 
-               
-=======
-
-
->>>>>>> a6b0a709c4537d7c6f44533c76a7c91db8e7f847
                 _player.speed = reducedSpeed;
 
             }
