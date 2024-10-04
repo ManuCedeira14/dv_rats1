@@ -12,12 +12,10 @@ public class PlayerModel : MonoBehaviour
 
     [SerializeField] public float speed;
     [SerializeField] public float forceJump;
-    [SerializeField] public int maxHealth;
-    [SerializeField] public int currentHealth;
     [SerializeField] public bool canJump;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
-    [SerializeField] private Slider _healthBar;
+    LifeHandler _lifeHandler;
 
     IController _controller;
     PlayerView _PV;
@@ -32,17 +30,14 @@ public class PlayerModel : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
 
-        _controller = new PlayerController(this);
-
-        currentHealth = maxHealth;
+        _lifeHandler = GetComponent<LifeHandler>(); // Obtener LifeHandler antes de crear el controlador
+        _controller = new PlayerController(this, _lifeHandler); // Pasar LifeHandler al controlador
     }
 
     private void Update()
     {
         _controller.ControllerUpdate();
-        UpdateHealthBar(currentHealth);
         CheckGround(); // Verificar si el jugador está en el suelo
-        Death();
     }
 
     private void FixedUpdate()
@@ -69,7 +64,17 @@ public class PlayerModel : MonoBehaviour
             OnJump();
         }
     }
+    public void TakeDamage(float amount)
+    {
+        _lifeHandler.TakeDamage(amount);  // Delegar el daño al LifeHandler
+    }
 
+    public void Heal(float amount)
+    {
+        _lifeHandler.Heal(amount);  // Delegar la curación al LifeHandler
+    }
+    public float CurrentLife => _lifeHandler.CurrentLife;
+    public float MaxLife => _lifeHandler.MaxLife;
     private void CheckGround()
     {
         RaycastHit hit;
@@ -81,31 +86,5 @@ public class PlayerModel : MonoBehaviour
         {
             canJump = false; // Si no está en el suelo, no puede saltar
         }
-    }
-
-    public void UpdateHealthBar(int _currentHealth)
-    {
-        _healthBar.value = _currentHealth;
-        Debug.Log("vida actual" + _currentHealth);
-    }
-
-    public void Heal(int healAmount)
-    {
-        currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        UpdateHealthBar(currentHealth);
-    }
-
-    void Death()
-    {
-        if (currentHealth <= 0)
-        {
-            Debug.Log("RIP");
-            enabled = false;
-            SceneManager.LoadScene(2);
-        }
-
-        OnDeath();
     }
 }

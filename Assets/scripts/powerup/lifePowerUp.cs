@@ -24,10 +24,10 @@ public class lifePowerUp : PowerUp
         if (player != null)
         {
            
-            if (player.currentHealth < player.maxHealth)
+            if (player.CurrentLife < player.MaxLife)
             {
                 player.Heal(lifeToAdd);  
-                Debug.Log("Actual life: " + player.currentHealth);
+                Debug.Log("Actual life: " + player.CurrentLife);
             }
         }
     }
@@ -35,7 +35,7 @@ public class lifePowerUp : PowerUp
     private void OnTriggerEnter(Collider other)
     {
 
-        if (player.currentHealth < player.maxHealth && other.CompareTag("Player") && !_pickedUp)
+        if (player.CurrentLife < player.MaxLife && other.CompareTag("Player") && !_pickedUp)
         {
             _pickedUp = true;
             addLife();

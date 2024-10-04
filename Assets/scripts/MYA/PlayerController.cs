@@ -1,24 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 [RequireComponent(typeof(PlayerModel))]
 public class PlayerController : IController
 {
     Vector3 _direction;
     PlayerModel _m;
     Transform _cameraTransform;
-
-    public PlayerController(PlayerModel m)
+    LifeHandler _lifeHandler;
+    private bool _controlsEnabled = true;
+    public PlayerController(PlayerModel m, LifeHandler lifeHandler)
     {
         _direction = Vector3.zero;
         _m = m;
         _cameraTransform = Camera.main.transform; 
+        _lifeHandler = lifeHandler;  // Asignar LifeHandler desde el constructor
+        _lifeHandler.OnDead += TurnOffControls;
     }
+
 
     public void ControllerUpdate()
     {
-        
+        if (!_controlsEnabled) return;
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -43,5 +48,11 @@ public class PlayerController : IController
     public void ControllerFixedUpdate()
     {
         _m.Move(_direction);
+    }
+    void TurnOffControls()
+    {
+        _controlsEnabled = false;
+
+        //EventManager.TriggerEvent(EventsType.Event_PlayerDeath);
     }
 }

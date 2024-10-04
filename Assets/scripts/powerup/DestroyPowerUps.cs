@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DestroyPowerUps : lifePowerUp
 {
+    private PlayerModel playerModel; // Referencia al jugador
+
+
     public DestroyPowerUps()
     {
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (player.currentHealth < player.maxHealth && other.CompareTag("Player") && !_pickedUp)
+        if (playerModel.CurrentLife < playerModel.MaxLife && other.CompareTag("Player") && !_pickedUp)
         {
             _pickedUp = true;
             DestroyPowerUp();

@@ -58,9 +58,12 @@ public class Patroll : Enemy
             PlayerModel playerScript = collision.collider.GetComponent<PlayerModel>();
             if (playerScript != null)
             {
-                playerScript.currentHealth -= 1;
-                playerScript.UpdateHealthBar(playerScript.currentHealth);
-                Debug.Log("Enemigo tocó al jugador. Vida restante: " + playerScript.currentHealth);
+                LifeHandler lifeHandler = playerScript.GetComponent<LifeHandler>();
+                if (lifeHandler != null)
+                {
+                    lifeHandler.TakeDamage(1); 
+                    Debug.Log("Enemigo tocó al jugador. Vida restante: " + lifeHandler.CurrentLife); 
+                }
             }
         }
     }
