@@ -16,6 +16,7 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
     LifeHandler _lifeHandler;
+    HealthBar _healthBar;
 
     IController _controller;
     PlayerView _PV;
@@ -30,14 +31,19 @@ public class PlayerModel : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
 
-        _lifeHandler = GetComponent<LifeHandler>(); // Obtener LifeHandler antes de crear el controlador
-        _controller = new PlayerController(this, _lifeHandler); // Pasar LifeHandler al controlador
+        _lifeHandler = GetComponent<LifeHandler>(); 
+        _controller = new PlayerController(this, _lifeHandler);
+        _healthBar = FindObjectOfType<HealthBar>();
+        if (_healthBar != null)
+        {
+            _healthBar.Initialize(_lifeHandler);  
+        }
     }
 
     private void Update()
     {
         _controller.ControllerUpdate();
-        CheckGround(); // Verificar si el jugador está en el suelo
+        CheckGround(); 
     }
 
     private void FixedUpdate()
@@ -60,18 +66,18 @@ public class PlayerModel : MonoBehaviour
         if (canJump)
         {
             _rb.AddForce(Vector3.up * forceJump, ForceMode.VelocityChange);
-            canJump = false; // Evitar saltos consecutivos sin tocar el suelo
+            canJump = false; 
             OnJump();
         }
     }
     public void TakeDamage(float amount)
     {
-        _lifeHandler.TakeDamage(amount);  // Delegar el daño al LifeHandler
+        _lifeHandler.TakeDamage(amount);  
     }
 
     public void Heal(float amount)
     {
-        _lifeHandler.Heal(amount);  // Delegar la curación al LifeHandler
+        _lifeHandler.Heal(amount); 
     }
     public float CurrentLife => _lifeHandler.CurrentLife;
     public float MaxLife => _lifeHandler.MaxLife;
@@ -80,11 +86,11 @@ public class PlayerModel : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, checkDistance, groundLayer))
         {
-            canJump = true; // Si está en el suelo, puede saltar
+            canJump = true; 
         }
         else
         {
-            canJump = false; // Si no está en el suelo, no puede saltar
+            canJump = false; 
         }
     }
 }

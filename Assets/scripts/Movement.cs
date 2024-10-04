@@ -28,19 +28,19 @@ public class Movement
         _jumpSpeed = jumpSpeed;
     }
 
-    public float Speed //para acceder y modificar speed
+    public float Speed 
     {
         get { return _speed; }
         set { _speed = value; }
     }
 
-    public void Move(float horizontal, float vertical) //funcion para mover
+    public void Move(float horizontal, float vertical) 
     {
         moveDirection = targetOrientation.forward * vertical + targetOrientation.right * horizontal;
         _targetRigidbody.AddForce(moveDirection.normalized * _speed * 10f, ForceMode.Force);
     }
 
-    public void Jump() //funcion para saltar
+    public void Jump() 
     {
 
         Vector3 floor = target.TransformDirection(Vector3.down);
@@ -56,11 +56,11 @@ public class Movement
         }
 
     }
-    public void SpeedControl() //funcion para controlar la velocidad
+    public void SpeedControl() 
     {
         Vector3 flatVel = new Vector3(_targetRigidbody.velocity.x, 0f, _targetRigidbody.velocity.z);
 
-        // limit velocity if needed
+        
         if (flatVel.magnitude > _speed)
         {
             Vector3 limitedVel = flatVel.normalized * _speed;

@@ -15,7 +15,7 @@ public class PlayerController : IController
         _direction = Vector3.zero;
         _m = m;
         _cameraTransform = Camera.main.transform; 
-        _lifeHandler = lifeHandler;  // Asignar LifeHandler desde el constructor
+        _lifeHandler = lifeHandler;  
         _lifeHandler.OnDead += TurnOffControls;
     }
 
@@ -53,6 +53,5 @@ public class PlayerController : IController
     {
         _controlsEnabled = false;
 
-        //EventManager.TriggerEvent(EventsType.Event_PlayerDeath);
     }
 }

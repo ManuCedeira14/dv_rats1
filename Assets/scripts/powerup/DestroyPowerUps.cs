@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyPowerUps : lifePowerUp
 {
-    private PlayerModel playerModel; // Referencia al jugador
+    private PlayerModel playerModel;
 
 
     public DestroyPowerUps()
