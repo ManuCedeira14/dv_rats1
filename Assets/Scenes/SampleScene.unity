@@ -868,6 +868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reducedSpeed: 5
+  movimiento: {fileID: 2100000, guid: 6ac7a3dd28872dd4da34fe4ee9d72819, type: 2}
 --- !u!65 &261100779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8587,6 +8588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reducedSpeed: 5
+  movimiento: {fileID: 2100000, guid: 6ac7a3dd28872dd4da34fe4ee9d72819, type: 2}
 --- !u!1 &1864739393
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,10 @@ public class ReducerSpeed : MonoBehaviour
     private float originalSpeed;
     private Player player;
 
+    
+    public Material movimiento;  
+    private const string BoolParameterName = "_on_off"; 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -16,10 +20,12 @@ public class ReducerSpeed : MonoBehaviour
 
             if (player != null)
             {
+                
                 originalSpeed = player.speed;
                 player.Actuallife--;
                 player.UpdateHealthBar();
                 player.speed = reducedSpeed;
+                movimiento.SetFloat(BoolParameterName, 1.0f);
             }
         }
     }
@@ -28,7 +34,9 @@ public class ReducerSpeed : MonoBehaviour
     {
         if (other.CompareTag("Player") && player != null)
         {
+            
             player.speed = originalSpeed;
+            movimiento.SetFloat(BoolParameterName, 0.0f);
             player = null;
         }
     }
