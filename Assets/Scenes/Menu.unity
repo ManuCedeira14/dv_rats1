@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3301887, g: 0.026477398, b: 0.029393367, a: 1}
+  m_Color: {r: 0.090557136, g: 0.40745974, b: 0.5188679, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -418,10 +418,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.7924528, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 0.8962264, g: 0.47770557, b: 0.47770557, a: 1}
-    m_PressedColor: {r: 0.6698113, g: 0.4518067, b: 0.4518067, a: 1}
-    m_SelectedColor: {r: 0.67058825, g: 0.45098042, b: 0.45098042, a: 1}
+    m_NormalColor: {r: 0.110137045, g: 0.8408467, b: 0.9339623, a: 1}
+    m_HighlightedColor: {r: 0.2028302, g: 1, b: 0.763383, a: 1}
+    m_PressedColor: {r: 0.20392159, g: 1, b: 0.76470596, a: 1}
+    m_SelectedColor: {r: 0.20392159, g: 1, b: 0.76470596, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -641,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0dd0d6dae8e33489a779b7f9dfb774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmgShader: {fileID: 0}
 --- !u!114 &1830730438
 MonoBehaviour:
   m_ObjectHideFlags: 0
