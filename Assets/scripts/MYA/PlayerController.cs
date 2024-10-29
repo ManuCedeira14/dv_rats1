@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-[RequireComponent(typeof(PlayerModel))]
+
 public class PlayerController : IController
 {
     Vector3 _direction;
