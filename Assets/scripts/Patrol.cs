@@ -58,6 +58,7 @@ public class Patroll : Enemy
             Player playerScript = collision.collider.GetComponent<Player>();
             if (playerScript != null)
             {
+
                 playerScript.Actuallife -= 1;
                 playerScript.UpdateHealthBar();
                 Debug.Log("Enemigo tocó al jugador. Vida restante: " + playerScript.Actuallife);

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: movimiento
-  m_Shader: {fileID: -6465566751694194690, guid: 81f5ecdcf69010a49a0bdb9dcaa4db9f,
+  m_Name: dmgShader
+  m_Shader: {fileID: -6465566751694194690, guid: 2a53e778866d09f40920d4d52c070e69,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,12 +24,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_05bbb04be28044f68070b7f96d01eeae_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: f0c0774175c8da041808eb93b673bcf2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_8ed2c951305a40a5b8115af200b91182_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: f0c0774175c8da041808eb93b673bcf2, type: 3}
+    - _Texture2D:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -46,12 +42,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _amplitude: 1.95
-    - _blend: 0.13
-    - _noisescale: 10
-    - _on_off: 0
+    - _Edge1: 0.15
+    - _amplitude: 1
+    - _beatSpeed: 2
+    - _on_off: 1
+    - _on_off_1: 0
+    - _power: 5
     m_Colors:
-    - _Color: {r: 0.8113208, g: 0.057404764, b: 0.7196682, a: 0}
-    - _speed: {r: 0.76, g: -0.05, b: 0, a: 0}
-    - _tint: {r: 0.5, g: 0.23349056, b: 0.495937, a: 0}
+    - _Color: {r: 1, g: 0, b: 0.0666666, a: 0}
+    - _subtract: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []

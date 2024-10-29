@@ -2597,6 +2597,7 @@ MonoBehaviour:
   rb: {fileID: 609696459}
   healthBar: {fileID: 1085225685}
   cameraTransform: {fileID: 330585546}
+  dmgShader: {fileID: 2100000, guid: 6994875a0a2edae4d9c788d9e76aeb33, type: 2}
 --- !u!114 &609696458
 MonoBehaviour:
   m_ObjectHideFlags: 0

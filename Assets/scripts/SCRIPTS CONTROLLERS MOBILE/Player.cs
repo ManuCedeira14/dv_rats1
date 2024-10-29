@@ -13,10 +13,14 @@ public class Player : MonoBehaviour
     [SerializeField] public int bullets = 20;
     [SerializeField] public int totalBullets = 150;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private Slider healthBar;  // Barra de vida
+    [SerializeField] private Slider healthBar;
     [SerializeField] private Transform cameraTransform;
 
     private bool isInitialized = false;
+
+    public Material dmgShader;
+    private const string BoolParameterName = "_on_off";
+    private const string FloatParameterName = "_Edge1";
 
     private void Start()
     {
@@ -25,20 +29,18 @@ public class Player : MonoBehaviour
 
     IEnumerator InitializePlayer()
     {
-        // Esperar hasta que el valor remoto esté disponible
         while (RemoteConfigExample.Instance == null || RemoteConfigExample.Instance.actualLife == 0)
         {
-            yield return null;  // Esperar un frame
+            yield return null;
         }
 
-        // Asignar los valores de RemoteConfig
         Actuallife = RemoteConfigExample.Instance.actualLife;
         speed = RemoteConfigExample.Instance.playerSpeed;
 
         if (healthBar != null)
         {
             healthBar.maxValue = _maxLife;
-            UpdateHealthBar();  // Actualizar la barra de vida al iniciar
+            UpdateHealthBar();
         }
 
         isInitialized = true;
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
         if (!isInitialized) return;
 
         MovePlayer();
+        UpdateEdgeValues(); // Actualizar el valor de Edge1 según la vida del jugador
 
         if (Actuallife <= 0)
         {
@@ -87,6 +90,30 @@ public class Player : MonoBehaviour
         Actuallife += healAmount;
         Actuallife = Mathf.Clamp(Actuallife, 0, _maxLife);
 
-        UpdateHealthBar();  // Llamar a la actualización de la barra de vida
+        UpdateHealthBar();
+        if (Actuallife == _maxLife)
+        {
+            dmgShader.SetFloat(BoolParameterName, 0.0f);
+        }
+    }
+
+    
+    private void UpdateEdgeValues()
+    {
+        if (Actuallife == 4)
+        {
+            dmgShader.SetFloat(BoolParameterName, 1.0f);
+            dmgShader.SetFloat(FloatParameterName, 0.3f);
+        }
+        else if (Actuallife < 4 && Actuallife > 1)
+        {
+
+            dmgShader.SetFloat(FloatParameterName, 0.15f);
+        }
+        else if (Actuallife == 1)
+        {
+
+            dmgShader.SetFloat(FloatParameterName, -0.1f);
+        }
     }
 }
