@@ -8,7 +8,6 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Controller controller;
-    [SerializeField] private playerprefs playerprefs;
     [SerializeField] public float speed;
     [SerializeField] public int Actuallife;
     [SerializeField] public int _maxLife = 5;
@@ -20,15 +19,22 @@ public class Player : MonoBehaviour
     [SerializeField] public int coins;
     [SerializeField] private int maxCoins = 20;
     [SerializeField] private TextMeshProUGUI coinsText;
-
+    playerprefs _playerprefs;
+    public bool _isMoving = false;
     private bool isInitialized = false;
 
     public Material dmgShader;
     private const string BoolParameterName = "_on_off";
     private const string FloatParameterName = "_Edge1";
 
+    public void Awake()
+    {
+
+        dmgShader.SetFloat(BoolParameterName, 0.0f);
+    }
     private void Start()
     {
+        _playerprefs = FindObjectOfType<playerprefs>();
         StartCoroutine(InitializePlayer());
         UpdateCoinsUI();
     }
@@ -55,9 +61,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (!isInitialized) return;
-
+        
         MovePlayer();
-        UpdateEdgeValues(); // Actualizar el valor de Edge1 según la vida del jugador
+        CheckStamina();
+        UpdateEdgeValues(); 
 
         if (Actuallife <= 0)
         {
@@ -81,6 +88,22 @@ public class Player : MonoBehaviour
         Vector3 desiredMovement = (cameraForward * inputMovement.z + cameraRight * inputMovement.x) * speed;
 
         rb.velocity = new Vector3(desiredMovement.x, rb.velocity.y, desiredMovement.z);
+        if (inputMovement.magnitude > 0)
+        {
+            if (!_isMoving)
+            {
+                _isMoving = true; 
+                Debug.Log("El jugador comenzó a moverse");
+            }
+        }
+        else
+        {
+            if (_isMoving)
+            {
+                _isMoving = false; 
+                Debug.Log("El jugador dejó de moverse");
+            }
+        }
     }
 
     public void UpdateHealthBar()
@@ -125,8 +148,8 @@ public class Player : MonoBehaviour
     public void AddLife(int amount)
     {
         Actuallife += amount;
-        Actuallife = Mathf.Clamp(Actuallife, 0, _maxLife); // No exceder el máximo
-        UpdateHealthBar(); // Actualizar la barra de vida
+        Actuallife = Mathf.Clamp(Actuallife, 0, _maxLife); 
+        UpdateHealthBar(); 
         Debug.Log($"Vida actualizada: {Actuallife}/{_maxLife}");
     }
 
@@ -159,6 +182,18 @@ public class Player : MonoBehaviour
         {
             coinsText.text = coins.ToString(); 
     }
+        
 }
+    void CheckStamina()
+    {
+        if (_playerprefs.staminaValue <= 0)
+        {
+            speed = 12.5f;
+        }
+        else if (_playerprefs.staminaValue > 1)
+        {
+            speed = 25f;
+        }
+    }
 }
 
