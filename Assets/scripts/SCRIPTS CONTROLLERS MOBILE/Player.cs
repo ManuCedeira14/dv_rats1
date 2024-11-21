@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private Controller controller;
+    [SerializeField] private playerprefs playerprefs;
     [SerializeField] public float speed;
     [SerializeField] public int Actuallife;
     [SerializeField] public int _maxLife = 5;
@@ -15,6 +17,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Transform cameraTransform;
+    [SerializeField] public int coins;
+    [SerializeField] private int maxCoins = 20;
+    [SerializeField] private TextMeshProUGUI coinsText;
 
     private bool isInitialized = false;
 
@@ -25,6 +30,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         StartCoroutine(InitializePlayer());
+        UpdateCoinsUI();
     }
 
     IEnumerator InitializePlayer()
@@ -116,4 +122,43 @@ public class Player : MonoBehaviour
             dmgShader.SetFloat(FloatParameterName, -0.1f);
         }
     }
+    public void AddLife(int amount)
+    {
+        Actuallife += amount;
+        Actuallife = Mathf.Clamp(Actuallife, 0, _maxLife); // No exceder el máximo
+        UpdateHealthBar(); // Actualizar la barra de vida
+        Debug.Log($"Vida actualizada: {Actuallife}/{_maxLife}");
+    }
+
+    //public void AddCoins(int amount)
+    //{
+    //    coins += amount;
+    //    coins = Mathf.Clamp(coins, 0, maxCoins);
+    //    UpdateCoinsUI();
+    //    Debug.Log($"Monedas actuales: {coins}");
+    //}
+
+    public bool SpendCoins(int amount)
+    {
+        if (coins >= amount)
+        {
+            coins -= amount;
+            UpdateCoinsUI();
+            Debug.Log($"Monedas restantes: {coins}");
+            return true; 
+        }
+        else
+        {
+            Debug.Log("No hay suficientes monedas");
+            return false;
+        }
+    }
+    private void UpdateCoinsUI()
+    {
+        if (coinsText != null)
+        {
+            coinsText.text = coins.ToString(); 
+    }
 }
+}
+

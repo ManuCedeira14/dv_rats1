@@ -6,6 +6,7 @@ public class rewardedads : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 {
     [SerializeField] private string androidAdUnitId = "Rewarded_Android";
     [SerializeField] private string iosAdUnitId = "Rewarded_iOS";
+    [SerializeField] private Player player;
 
     private string adUnitId;
 
@@ -52,7 +53,18 @@ public class rewardedads : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         Debug.Log("Unity Rewarded Ad");
 
         if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
+        {
             Debug.Log("COMPLETED");
+            if (player != null)
+            {
+                player.AddLife(1);
+            }
+            else
+            {
+                Debug.LogError("Player no asignado en rewardedads");
+            }
+        }
+            
         else if (showCompletionState.Equals(UnityAdsShowCompletionState.SKIPPED))
             Debug.Log("SKIPPED");
         else if (showCompletionState.Equals(UnityAdsShowCompletionState.UNKNOWN))
