@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     void MovePlayer()
     {
         Vector3 inputMovement = controller.GetMovement();

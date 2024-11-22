@@ -43,13 +43,11 @@ public class playerprefs : MonoBehaviour
 
     public void AddCoin(int amount)
     {
-        
-       
+
             coins += amount;
             coinsText.text = "" + coins;
             SaveData();
-        
-        
+
     }
 
     public bool SpendCoins(int amount)
