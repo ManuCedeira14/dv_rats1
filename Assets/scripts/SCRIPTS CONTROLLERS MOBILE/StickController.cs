@@ -7,6 +7,7 @@ public class StickController : Controller, IDragHandler, IEndDragHandler
 {
     private Vector3 _initialPosition;
     [SerializeField, Range(50, 200)] private float maxMagnitude;
+    //bool _isMoving=false;
     
 
 
@@ -19,7 +20,8 @@ public class StickController : Controller, IDragHandler, IEndDragHandler
     {
         var finalDirection = new Vector3(_moveDir.x, 0, _moveDir.y);
         finalDirection /= maxMagnitude;
-
+        //_isMoving = true;
+        //Debug.Log("se esta moviendo");
         return finalDirection;
     }
 
