@@ -4,20 +4,55 @@ using UnityEngine;
 
 public class CanvasGroupModify : MonoBehaviour
 {
-    [SerializeField] CanvasGroup _myCanvasGroup;
+    [SerializeField] private Canvas menuPrincipal;
+    [SerializeField] private Canvas pausa;
+    [SerializeField] private Canvas options;
+    [SerializeField] private CanvasGroup shop;
 
     private void Start()
     {
-        ShowOrHideMenu(false);
+        ShowMenu();
 
     }
-
-    public void ShowOrHideMenu(bool Value)
+    public void ShowMenu()
     {
-        if (Value) _myCanvasGroup.alpha = 1;
-        else _myCanvasGroup.alpha = 0;
+        
+        menuPrincipal.gameObject.SetActive(true);
 
-        _myCanvasGroup.interactable = Value;
-        _myCanvasGroup.blocksRaycasts = Value;
+        
+        ShowOrHideShop(false);
     }
+
+    public void ShowPause()
+    {
+        menuPrincipal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(true);
+        options.gameObject.SetActive(false);
+        ShowOrHideShop(false); 
+    }
+
+    public void ShowOptions()
+    {
+        menuPrincipal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(false);
+        options.gameObject.SetActive(true);
+        ShowOrHideShop(false); 
+    }
+    public void ShowShop()
+    {
+        
+        menuPrincipal.gameObject.SetActive(false);
+
+       
+        ShowOrHideShop(true);
+    }
+
+    private void ShowOrHideShop(bool value)
+    {
+        shop.alpha = value ? 1 : 0;
+        shop.interactable = value;
+        shop.blocksRaycasts = value;
+    }
+
 }
+ 
