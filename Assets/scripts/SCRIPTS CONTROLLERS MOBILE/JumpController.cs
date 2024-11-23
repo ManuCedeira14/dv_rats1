@@ -11,7 +11,6 @@ public class JumpController : Controller, IPointerDownHandler, IPointerUpHandler
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
     private bool isInitialized = false;
-
     void Start()
     {
         if (playerRb == null)

@@ -4,7 +4,7 @@ public class CoinTrigger : MonoBehaviour
 {
      private playerprefs playerPrefs; 
     [SerializeField] private int rotationSpeed;
-
+    [SerializeField] private audiomanager soundManager;
     private void Start()
     {
         if (playerPrefs == null)
@@ -25,7 +25,8 @@ public class CoinTrigger : MonoBehaviour
         {
             if (playerPrefs != null)
             {
-                playerPrefs.AddCoin(1); 
+                playerPrefs.AddCoin(1);
+                soundManager.PlaySound(1);
                 Debug.Log("Moneda recogida.");
             }
             else

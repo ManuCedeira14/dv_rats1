@@ -8,7 +8,8 @@ public class Patroll : Enemy
     [SerializeField] float patrolSpeed = 2f;  
     [SerializeField] float pursuitSpeed = 4f; 
     [SerializeField] Transform player;       
-    [SerializeField] float attackRange = 5f;  
+    [SerializeField] float attackRange = 5f;
+    [SerializeField] private audiomanager soundManager;
 
     private int currentWaypointIndex = 0;
 
@@ -60,6 +61,7 @@ public class Patroll : Enemy
             {
 
                 playerScript.Actuallife -= 1;
+                soundManager.PlaySound(0);
                 playerScript.UpdateHealthBar();
                 Debug.Log("Enemigo tocó al jugador. Vida restante: " + playerScript.Actuallife);
             }

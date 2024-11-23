@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     playerprefs _playerprefs;
     public bool _isMoving = false;
     private bool isInitialized = false;
+    [SerializeField] private audiomanager soundManager;
 
     public Material dmgShader;
     private const string BoolParameterName = "_on_off";
@@ -93,7 +94,8 @@ public class Player : MonoBehaviour
         {
             if (!_isMoving)
             {
-                _isMoving = true; 
+                _isMoving = true;
+                soundManager.PlaySound(2);
                 Debug.Log("El jugador comenzó a moverse");
             }
         }
@@ -101,7 +103,7 @@ public class Player : MonoBehaviour
         {
             if (_isMoving)
             {
-                _isMoving = false; 
+                _isMoving = false;
                 Debug.Log("El jugador dejó de moverse");
             }
         }
