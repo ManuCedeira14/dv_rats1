@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Transform cameraTransform;
+    [SerializeField] private GameObject bulletPrefab; 
+    [SerializeField] private Transform bulletSpawnPoint; 
+    [SerializeField] private float bulletSpeed = 20f; 
 
     private bool isInitialized = false;
 
@@ -59,6 +62,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     void MovePlayer()
     {
         Vector3 inputMovement = controller.GetMovement();
@@ -75,6 +79,20 @@ public class Player : MonoBehaviour
         Vector3 desiredMovement = (cameraForward * inputMovement.z + cameraRight * inputMovement.x) * speed;
 
         rb.velocity = new Vector3(desiredMovement.x, rb.velocity.y, desiredMovement.z);
+    }
+    public void ShootButton()
+    {
+        Shoot();
+    }
+    private void Shoot()
+    {
+        if (bulletPrefab != null && bulletSpawnPoint != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+            bulletRb.velocity = bulletSpawnPoint.forward * bulletSpeed;
+            Destroy(bullet, 2f);
+        }
     }
 
     public void UpdateHealthBar()
