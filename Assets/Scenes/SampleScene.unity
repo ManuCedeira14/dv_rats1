@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1296,7 +1296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18714584, y: 0.023000002}
   m_AnchorMax: {x: 0.26545843, y: 0.121148154}
-  m_AnchoredPosition: {x: -19, y: -27.76007}
+  m_AnchoredPosition: {x: -19, y: -27.76001}
   m_SizeDelta: {x: -153.80005, y: -65.68025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196460472
@@ -22384,7 +22384,7 @@ Transform:
   m_GameObject: {fileID: 1434497656}
   serializedVersion: 2
   m_LocalRotation: {x: -0.9999917, y: -0, z: -0, w: 0.0040670177}
-  m_LocalPosition: {x: 0.717, y: -0.74, z: -0.1}
+  m_LocalPosition: {x: 0.691, y: -0.629, z: -0.099}
   m_LocalScale: {x: 7.130926, y: 7.1309247, z: 7.1309247}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22411,7 +22411,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cd91c382f742454f8a58e1e15e05e3e, type: 2}
+  - {fileID: 2100000, guid: 3770bfd3e98bcb14cab8c54314f85298, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23093,7 +23093,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 17
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -29673,7 +29673,7 @@ MonoBehaviour:
   _maxForce: 0
   life: 3
   dissolveMaterial: {fileID: 2100000, guid: d8ac5572f16c02b478031251c1cf12bd, type: 2}
-  dissolveSpeed: 1
+  dissolveSpeed: 0.6
   originalMaterial: {fileID: 2100000, guid: af34a4ffebb6fdc4291628820cf8e0d7, type: 2}
   enemyRenderer: {fileID: 1715670017}
   waypoints:
@@ -29785,7 +29785,7 @@ Transform:
   m_GameObject: {fileID: 1727324068}
   serializedVersion: 2
   m_LocalRotation: {x: -0.99087733, y: -0, z: -0, w: 0.13476682}
-  m_LocalPosition: {x: 0, y: -0.816, z: -0.29}
+  m_LocalPosition: {x: 0, y: -0.74, z: -0.562}
   m_LocalScale: {x: 7.130926, y: 7.130926, z: 7.130926}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29812,7 +29812,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4cd91c382f742454f8a58e1e15e05e3e, type: 2}
+  - {fileID: 2100000, guid: 3770bfd3e98bcb14cab8c54314f85298, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30494,7 +30494,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 17
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -34673,7 +34673,7 @@ Transform:
   m_GameObject: {fileID: 1736933541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.703125, y: -8.37, z: 43.58}
+  m_LocalPosition: {x: -2.703125, y: -7.63, z: 43.58}
   m_LocalScale: {x: 3.44, y: 3.44, z: 3.44}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -34697,7 +34697,7 @@ MonoBehaviour:
   _maxForce: 0
   life: 3
   dissolveMaterial: {fileID: 2100000, guid: d8ac5572f16c02b478031251c1cf12bd, type: 2}
-  dissolveSpeed: 1
+  dissolveSpeed: 0.6
   originalMaterial: {fileID: 2100000, guid: af34a4ffebb6fdc4291628820cf8e0d7, type: 2}
   enemyRenderer: {fileID: 1736933545}
   waypoints:
@@ -34752,7 +34752,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af34a4ffebb6fdc4291628820cf8e0d7, type: 2}
+  - {fileID: 2100000, guid: d8ac5572f16c02b478031251c1cf12bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -35448,7 +35448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1871373847
 Transform:
   m_ObjectHideFlags: 0
@@ -40570,7 +40570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.035, y: 0.047241583}
   m_AnchorMax: {x: 0.14787503, y: 0.24837177}
-  m_AnchoredPosition: {x: 9.499512, y: -7.999878}
+  m_AnchoredPosition: {x: 9.499512, y: -8}
   m_SizeDelta: {x: 119, y: 205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1960943107
