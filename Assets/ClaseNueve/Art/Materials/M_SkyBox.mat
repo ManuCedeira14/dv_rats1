@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_SkyBox
-  m_Shader: {fileID: -6465566751694194690, guid: 22729553a06832c4da84cb9b674e0a16, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 22729553a06832c4da84cb9b674e0a16,
+    type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -56,9 +57,9 @@ Material:
     - _SkyBlendPower: 0.76
     - _StarsAmount: 1
     m_Colors:
-    - _GroundColor: {r: 0.8773585, g: 0.3609886, b: 0.120016, a: 1}
-    - _HorizonColor: {r: 0.509434, g: 0, b: 0.3637957, a: 1}
-    - _SkyColor: {r: 0.08319832, g: 0.0240299, b: 0.1886792, a: 1}
-    - _StarsColor: {r: 1, g: 1, b: 1, a: 0}
+    - _GroundColor: {r: 0.3018868, g: 0.111971706, b: 0.024207907, a: 1}
+    - _HorizonColor: {r: 0.26429433, g: 0.048282295, b: 0.2924528, a: 1}
+    - _SkyColor: {r: 0.122501396, g: 0.023451408, b: 0.2924528, a: 1}
+    - _StarsColor: {r: 0.7507037, g: 0.7924528, b: 0.30277678, a: 0}
     - _Test: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
