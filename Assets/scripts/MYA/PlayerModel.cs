@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerModel : MonoBehaviour
+public class PlayerModel : MementoEntity
 {
     Rigidbody _rb;
 
@@ -29,6 +29,7 @@ public class PlayerModel : MonoBehaviour
 
     private void Awake()
     {
+
         _rb = GetComponent<Rigidbody>();
 
         _lifeHandler = GetComponent<LifeHandler>(); 
@@ -40,15 +41,25 @@ public class PlayerModel : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
+        if (Debugger.ItsRewindTime)
+        {
+            Debug.Log("Rebobinando, deteniendo controlador...");
+            return; // Detiene toda lógica de movimiento durante el rebobinado
+        }
         _controller.ControllerUpdate();
-        CheckGround(); 
+        CheckGround();
+        base.Update();
     }
 
     private void FixedUpdate()
     {
-        _controller.ControllerFixedUpdate();
+        // Actualización del controlador en el FixedUpdate
+        if (!Debugger.ItsRewindTime) // Aseguramos que no se mueva en rebobinado
+        {
+            _controller.ControllerFixedUpdate();
+        }
     }
 
     public void Move(Vector3 dir)
@@ -92,5 +103,25 @@ public class PlayerModel : MonoBehaviour
         {
             canJump = false; 
         }
+    }
+    protected override void SaveStates()
+    {
+        _memento.SaveMemory(_rb.position, _rb.rotation, _lifeHandler.CurrentLife);
+        Debug.Log($"Estado guardado: Posición = {_rb.position}, Rotación = {_rb.rotation.eulerAngles}, Vida = {_lifeHandler.CurrentLife}");
+    }
+
+    protected override void LoadStates(object[] state)
+    {
+        if (state == null || state.Length != 3)
+        {
+            Debug.LogError($"Estado inválido cargado: {state?.Length ?? 0} elementos.");
+            return;
+        }
+
+        _rb.position = (Vector3)state[0];
+        _rb.rotation = (Quaternion)state[1];
+        _lifeHandler.Heal((float)state[2] - _lifeHandler.CurrentLife);
+
+        Debug.Log($"Estado restaurado: Posición = {_rb.position}, Rotación = {_rb.rotation.eulerAngles}, Vida = {_lifeHandler.CurrentLife}");
     }
 }
