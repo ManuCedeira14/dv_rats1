@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 public class winStar : MonoBehaviour
 {
     [SerializeField] public bool starGrabbed;
+    [SerializeField] private GameObject portal;
 
     private void Awake()
     {
         starGrabbed = false;
+        if (portal != null)
+        {
+            portal.SetActive(false);  
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -17,12 +22,15 @@ public class winStar : MonoBehaviour
         {
             starGrabbed = true;
             Destroy(gameObject);
-            WonScene();
+            ActivatePortal();
         }
     }
-    public void WonScene()
+
+    private void ActivatePortal()
     {
-        if (starGrabbed)
-            SceneManager.LoadScene(3);
+        if (portal != null)
+        {
+            portal.SetActive(true);  
+        }
     }
 }
