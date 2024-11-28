@@ -1,10 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
+using UnityEngine.Rendering.
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerModel : MementoEntity
 {
@@ -15,6 +11,9 @@ public class PlayerModel : MementoEntity
     [SerializeField] public bool canJump;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
+    [SerializeField] private Material damageMaterial; 
+    [SerializeField] private PostProcessVolume postProcessVolume; 
+    private IPlayerDecorator _decoratedPlayer;
     LifeHandler _lifeHandler;
     HealthBar _healthBar;
 
@@ -35,6 +34,8 @@ public class PlayerModel : MementoEntity
         _lifeHandler = GetComponent<LifeHandler>(); 
         _controller = new PlayerController(this, _lifeHandler);
         _healthBar = FindObjectOfType<HealthBar>();
+        _decoratedPlayer = new MaterialChangeDecorator(this, damageMaterial);
+        _decoratedPlayer = new PostProcessDecorator((PlayerModel)_decoratedPlayer, postProcessVolume);
         if (_healthBar != null)
         {
             _healthBar.Initialize(_lifeHandler);  
@@ -46,7 +47,7 @@ public class PlayerModel : MementoEntity
         if (Debugger.ItsRewindTime)
         {
             Debug.Log("Rebobinando, deteniendo controlador...");
-            return; // Detiene toda lógica de movimiento durante el rebobinado
+            return;
         }
         _controller.ControllerUpdate();
         CheckGround();
@@ -55,8 +56,8 @@ public class PlayerModel : MementoEntity
 
     private void FixedUpdate()
     {
-        // Actualización del controlador en el FixedUpdate
-        if (!Debugger.ItsRewindTime) // Aseguramos que no se mueva en rebobinado
+        
+        if (!Debugger.ItsRewindTime)
         {
             _controller.ControllerFixedUpdate();
         }
@@ -83,7 +84,8 @@ public class PlayerModel : MementoEntity
     }
     public void TakeDamage(float amount)
     {
-        _lifeHandler.TakeDamage(amount);  
+        _lifeHandler.TakeDamage(amount);
+        _decoratedPlayer.TakeDamage(amount);
     }
 
     public void Heal(float amount)
