@@ -34,12 +34,14 @@ public class PlayerModel : MementoEntity
         _lifeHandler = GetComponent<LifeHandler>(); 
         _controller = new PlayerController(this, _lifeHandler);
         _healthBar = FindObjectOfType<HealthBar>();
-        _decoratedPlayer = new MaterialChangeDecorator(this, damageMaterial);
+        
         _decoratedPlayer = new PostProcessDecorator((PlayerModel)_decoratedPlayer, postProcessVol);
         if (_healthBar != null)
         {
             _healthBar.Initialize(_lifeHandler);  
         }
+
+        _decoratedPlayer = new MaterialChangeDecorator(this, damageMaterial);
     }
 
     protected override void Update()
