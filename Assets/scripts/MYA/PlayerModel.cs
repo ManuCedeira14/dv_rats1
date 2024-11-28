@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.
+using UnityEngine.Rendering.PostProcessing;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerModel : MementoEntity
 {
@@ -11,8 +11,8 @@ public class PlayerModel : MementoEntity
     [SerializeField] public bool canJump;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
-    [SerializeField] private Material damageMaterial; 
-    [SerializeField] private PostProcessVolume postProcessVolume; 
+    [SerializeField] private Material damageMaterial;
+    [SerializeField] private PostProcessVolume postProcessVol;
     private IPlayerDecorator _decoratedPlayer;
     LifeHandler _lifeHandler;
     HealthBar _healthBar;
@@ -35,7 +35,7 @@ public class PlayerModel : MementoEntity
         _controller = new PlayerController(this, _lifeHandler);
         _healthBar = FindObjectOfType<HealthBar>();
         _decoratedPlayer = new MaterialChangeDecorator(this, damageMaterial);
-        _decoratedPlayer = new PostProcessDecorator((PlayerModel)_decoratedPlayer, postProcessVolume);
+        _decoratedPlayer = new PostProcessDecorator((PlayerModel)_decoratedPlayer, postProcessVol);
         if (_healthBar != null)
         {
             _healthBar.Initialize(_lifeHandler);  

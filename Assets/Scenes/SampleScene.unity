@@ -2161,6 +2161,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   checkDistance: 5
+  damageMaterial: {fileID: 2100000, guid: 1454af09002547f48a13d0c6a030015c, type: 2}
+  postProcessVol: {fileID: 505319325}
 --- !u!65 &448037367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2261,6 +2263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505319324}
+  - component: {fileID: 505319325}
   m_Layer: 0
   m_Name: PostProcessingVolume
   m_TagString: Untagged
@@ -2283,6 +2286,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505319325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505319323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 0}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &529537519
 GameObject:
   m_ObjectHideFlags: 0
