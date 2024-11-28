@@ -3,5 +3,5 @@ using UnityEngine;
 
 public interface IPlayerDecorator 
 {
-    void TakeDamage(float amount);
+    void TakeDamage(float damage);
 }

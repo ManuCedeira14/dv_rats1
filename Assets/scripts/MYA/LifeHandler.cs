@@ -12,6 +12,8 @@ public class LifeHandler : MonoBehaviour
     public float MaxLife => _maxLife; 
     public float CurrentLife => _currentLife;
 
+   
+
 
     public event Action<float> OnLifeChanged = delegate { };
 
@@ -25,6 +27,7 @@ public class LifeHandler : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         _currentLife -= dmg;
+        
         Debug.Log($"Current life = {_currentLife}");
 
         if (OnLifeChanged != null)

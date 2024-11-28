@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerModel : MementoEntity
 {
@@ -12,13 +12,14 @@ public class PlayerModel : MementoEntity
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
     [SerializeField] private Material damageMaterial;
-    [SerializeField] private PostProcessVolume postProcessVol;
+    [SerializeField] private Material defaultMaterial;
+
     private IPlayerDecorator _decoratedPlayer;
     LifeHandler _lifeHandler;
     HealthBar _healthBar;
+    Renderer _renderer;
 
     IController _controller;
-    PlayerView _PV;
 
     public event Action<float, float> OnMovement = delegate { };
     public event Action<float> OnLifeUpdate = delegate { };
@@ -28,20 +29,29 @@ public class PlayerModel : MementoEntity
 
     private void Awake()
     {
-
         _rb = GetComponent<Rigidbody>();
 
-        _lifeHandler = GetComponent<LifeHandler>(); 
-        _controller = new PlayerController(this, _lifeHandler);
-        _healthBar = FindObjectOfType<HealthBar>();
         
-        _decoratedPlayer = new PostProcessDecorator((PlayerModel)_decoratedPlayer, postProcessVol);
-        if (_healthBar != null)
+        _renderer = GetComponent<Renderer>();
+        if (_renderer == null)
         {
-            _healthBar.Initialize(_lifeHandler);  
+            Debug.LogError("No se encontró el componente Renderer en el Player. Asegúrate de que tenga un MeshRenderer o SkinnedMeshRenderer.");
+            return;
         }
 
-        _decoratedPlayer = new MaterialChangeDecorator(this, damageMaterial);
+        
+        if (damageMaterial == null || defaultMaterial == null)
+        {
+            Debug.LogError("Los materiales damageMaterial y defaultMaterial no están asignados en el inspector.");
+            return;
+        }
+
+       
+        _lifeHandler = GetComponent<LifeHandler>();
+        _controller = new PlayerController(this, _lifeHandler);
+
+        
+        _decoratedPlayer = new MaterialChangeDecorator(this, _renderer, damageMaterial, defaultMaterial);
     }
 
     protected override void Update()
@@ -58,7 +68,6 @@ public class PlayerModel : MementoEntity
 
     private void FixedUpdate()
     {
-        
         if (!Debugger.ItsRewindTime)
         {
             _controller.ControllerFixedUpdate();
@@ -80,34 +89,40 @@ public class PlayerModel : MementoEntity
         if (canJump)
         {
             _rb.AddForce(Vector3.up * forceJump, ForceMode.VelocityChange);
-            canJump = false; 
+            canJump = false;
             OnJump();
         }
     }
+
     public void TakeDamage(float amount)
     {
+        
         _lifeHandler.TakeDamage(amount);
         _decoratedPlayer.TakeDamage(amount);
+        OnTakeDamage();
     }
 
     public void Heal(float amount)
     {
-        _lifeHandler.Heal(amount); 
+        _lifeHandler.Heal(amount);
     }
+
     public float CurrentLife => _lifeHandler.CurrentLife;
     public float MaxLife => _lifeHandler.MaxLife;
+
     private void CheckGround()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, checkDistance, groundLayer))
         {
-            canJump = true; 
+            canJump = true;
         }
         else
         {
-            canJump = false; 
+            canJump = false;
         }
     }
+
     protected override void SaveStates()
     {
         _memento.SaveMemory(_rb.position, _rb.rotation, _lifeHandler.CurrentLife);
