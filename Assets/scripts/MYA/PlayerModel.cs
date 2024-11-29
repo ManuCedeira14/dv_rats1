@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerModel : MementoEntity
@@ -13,6 +14,7 @@ public class PlayerModel : MementoEntity
     [SerializeField] float checkDistance = 1f;
     [SerializeField] private Material damageMaterial;
     [SerializeField] private Material defaultMaterial;
+    [SerializeField] private Slider healthBar;
 
     private IPlayerDecorator _decoratedPlayer;
     LifeHandler _lifeHandler;
@@ -63,6 +65,7 @@ public class PlayerModel : MementoEntity
         }
         _controller.ControllerUpdate();
         CheckGround();
+        UpdateHealthBar();
         base.Update();
     }
 
@@ -120,6 +123,14 @@ public class PlayerModel : MementoEntity
         else
         {
             canJump = false;
+        }
+    }
+    public void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            
+            healthBar.value = _lifeHandler._currentLife;
         }
     }
 
