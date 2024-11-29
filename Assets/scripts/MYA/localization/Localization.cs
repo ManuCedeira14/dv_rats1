@@ -11,6 +11,7 @@ public enum Language
     English
 }
 
+[DefaultExecutionOrder(-50)]
 public class Localization : MonoBehaviour
 {
     [SerializeField] string _webURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSeL1zlunFtUP-hKhtjVbpKkUg2WYSCAByHPnuPHb8EkgAU6IWnWa8YOCOfkWdTWnQZIF_RdWgpfJaR/pub?output=csv";
@@ -76,6 +77,8 @@ public class Localization : MonoBehaviour
 
     public string GetTranslate(string ID)
     {
+        if (_localization == null) return null;
+
         var idsDictionary = _localization[_currentLanguage];
 
         idsDictionary.TryGetValue(ID, out var result);

@@ -8,24 +8,22 @@ public class TextTranslate : MonoBehaviour
 {
 
     [SerializeField] string _id;
-
-    [SerializeField] Localization _localization;
-
     [SerializeField] TextMeshProUGUI _myText;
 
 
     void Awake()
     {
-        _localization.OnUpdate += ChangeLang;
+        Localization.Instance.OnUpdate += ChangeLang;
+        ChangeLang();
     }
 
     void ChangeLang()
     {
-        _myText.text = _localization.GetTranslate(_id);
+        _myText.text = Localization.Instance.GetTranslate(_id);
     }
 
     private void OnDestroy()
     {
-        _localization.OnUpdate -= ChangeLang;
+        Localization.Instance.OnUpdate -= ChangeLang;
     }
 }
