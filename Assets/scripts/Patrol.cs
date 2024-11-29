@@ -61,7 +61,7 @@ public class Patroll : Enemy
                 LifeHandler lifeHandler = playerScript.GetComponent<LifeHandler>();
                 if (lifeHandler != null)
                 {
-                    lifeHandler.TakeDamage(1); 
+                   playerScript.TakeDamage(1); 
                     Debug.Log("Enemigo tocó al jugador. Vida restante: " + lifeHandler.CurrentLife); 
                 }
             }

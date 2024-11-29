@@ -35,20 +35,7 @@ public class PlayerModel : MementoEntity
 
         
         _renderer = GetComponent<Renderer>();
-        if (_renderer == null)
-        {
-            Debug.LogError("No se encontró el componente Renderer en el Player. Asegúrate de que tenga un MeshRenderer o SkinnedMeshRenderer.");
-            return;
-        }
 
-        
-        if (damageMaterial == null || defaultMaterial == null)
-        {
-            Debug.LogError("Los materiales damageMaterial y defaultMaterial no están asignados en el inspector.");
-            return;
-        }
-
-       
         _lifeHandler = GetComponent<LifeHandler>();
         _controller = new PlayerController(this, _lifeHandler);
 

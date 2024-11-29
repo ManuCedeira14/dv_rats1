@@ -12,30 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"fe267a3c-a2b5-481d-ad64-2d28d84fbca9\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"56e7dd76-65a5-491f-a281-0dc4c21db63d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"JumpForce\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 27.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"0455b923-2235-4fa1-b530-85cf65b1efd2\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"90dcce4e-2c7f-4d58-8d89-e9cc24422eaf\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Patrulla\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"cff45dc2-b88f-41a5-a6f9-07cf299693a6\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"eeb1760b-18e0-4575-9c8c-443e0f72c0ea\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"ActualLife\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"d9e34e08-c0af-48ce-a1a1-cf16a641143f\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"c57b8080-111f-47ad-9e83-f19fd42f6ee5\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Player\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"bc05a57d-e69c-48d5-a208-11d976d528ac\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4f0f8b80-4c6b-4119-bfac-675e69f5a30a\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 25.0\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"fe267a3c-a2b5-481d-ad64-2d28d84fbca9\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"56e7dd76-65a5-491f-a281-0dc4c21db63d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"JumpForce\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 27.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"0455b923-2235-4fa1-b530-85cf65b1efd2\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"90dcce4e-2c7f-4d58-8d89-e9cc24422eaf\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"EnemyName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Patrulla\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"cff45dc2-b88f-41a5-a6f9-07cf299693a6\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"eeb1760b-18e0-4575-9c8c-443e0f72c0ea\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"ActualLife\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"d9e34e08-c0af-48ce-a1a1-cf16a641143f\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"c57b8080-111f-47ad-9e83-f19fd42f6ee5\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"PlayerName\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Player\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"bc05a57d-e69c-48d5-a208-11d976d528ac\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4f0f8b80-4c6b-4119-bfac-675e69f5a30a\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"PlayerSpeed\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 25.0\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"8a4fd528-47cb-43fe-8b07-10cbb3302907\",\r\n   
