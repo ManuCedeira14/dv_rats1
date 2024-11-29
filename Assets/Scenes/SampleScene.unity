@@ -1337,7 +1337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18714584, y: 0.023000002}
   m_AnchorMax: {x: 0.26545843, y: 0.121148154}
-  m_AnchoredPosition: {x: -19, y: -28.000916}
+  m_AnchoredPosition: {x: -19, y: -28.000732}
   m_SizeDelta: {x: -153.80005, y: -65.20001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196460472
@@ -1359,8 +1359,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   checkDistance: 8
-  soundManager: {fileID: 0}
-  jumpSoundIndex: 3
 --- !u!1 &199714096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,21 +2849,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: playerprefs, Assembly-CSharp
-        m_MethodName: ContinueGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1901481941}
         m_TargetAssemblyTypeName: CanvasGroupModify, Assembly-CSharp
-        m_MethodName: ShowNivelUno
+        m_MethodName: ShowMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7129,6 +7115,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104855443}
   m_CullTransparentMesh: 1
+--- !u!1 &1108859138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108859140}
+  - component: {fileID: 1108859139}
+  m_Layer: 0
+  m_Name: playerprefs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1108859139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108859138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2518fdc3eb241df4b94241771432a22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualLife: 0
+  coins: 0
+  staminaValue: 100
+  StaminaSlider: {fileID: 1795156928}
+  lifeText: {fileID: 0}
+  coinsText: {fileID: 1104855445}
+  _player: {fileID: 609696457}
+--- !u!4 &1108859140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108859138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 597.9387, y: 239.57533, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1129724704
 GameObject:
   m_ObjectHideFlags: 0
@@ -12408,19 +12445,7 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: playerprefs, Assembly-CSharp
-        m_MethodName: DownStamina
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1798992845
 GameObject:
   m_ObjectHideFlags: 0
@@ -13917,8 +13942,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47379a4a3769a7449a8b086479477325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  niveluno: {fileID: 1519386661}
+  menuppal: {fileID: 1519386661}
   pausa: {fileID: 1230050972}
+  options: {fileID: 0}
+  shop: {fileID: 0}
 --- !u!4 &1901481942
 Transform:
   m_ObjectHideFlags: 0
@@ -25137,3 +25164,4 @@ SceneRoots:
   - {fileID: 1384556784}
   - {fileID: 750139720}
   - {fileID: 59718798}
+  - {fileID: 1108859140}

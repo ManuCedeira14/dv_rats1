@@ -39,7 +39,7 @@ public class playerprefs : MonoBehaviour
         }
         else
         {
-            Debug.LogError("stamina asignada!");
+            Debug.Log("stamina asignada!");
         }
         StaminaSlider.maxValue = 100;
         StaminaSlider.value = staminaValue;
@@ -64,9 +64,10 @@ public class playerprefs : MonoBehaviour
     public void LoadData()
     {
         actualLife = PlayerPrefs.GetFloat("ActualLife", 100); 
-        lifeText.text = "" + actualLife;
+        if(lifeText != null)
+            lifeText.text = "" + actualLife;
         coins = PlayerPrefs.GetInt("Coins", 0);
-        coinsText.text = ""+ coins;
+        coinsText.text = coins.ToString();
         if (_player != null)
         {
             float posX = PlayerPrefs.GetFloat(keys.positionKeyX, _player.transform.position.x);
@@ -128,7 +129,7 @@ public class playerprefs : MonoBehaviour
 
     private void UpdateUI()
     {
-        lifeText.text = "actual life: " + actualLife.ToString("F0"); // Mostrar HP sin decimales
+        //lifeText.text = "actual life: " + actualLife.ToString("F0"); // Mostrar HP sin decimales
         coinsText.text = "COINS: " + coins;
         StaminaSlider.value = staminaValue;
     }

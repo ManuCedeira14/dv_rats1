@@ -4,33 +4,63 @@ using UnityEngine;
 
 public class CanvasGroupModify : MonoBehaviour
 {
-    [SerializeField] private Canvas niveluno; // Canvas del menú principal
-    [SerializeField] private Canvas pausa;        // Canvas del menú de pausa
+    [SerializeField] private Canvas menuppal; 
+    [SerializeField] private Canvas pausa;
+    [SerializeField] private Canvas options;
+    [SerializeField] private CanvasGroup shop;
 
     private void Start()
     {
-        // Configuración inicial: mostrar el menú principal
-        ShowNivelUno();
+        ShowMenu();
     }
 
-    public void ShowNivelUno()
+    public void ShowMenu()
     {
-        niveluno.gameObject.SetActive(true); // Activa el menú principal
-        pausa.gameObject.SetActive(false);       // Desactiva el menú de pausa
+        menuppal.gameObject.SetActive(true); 
+        pausa.gameObject.SetActive(false);       
+        ShowOrHideShop(false);
+        if (options != null)
+            options.gameObject.SetActive(false);
     }
 
     public void ShowPause()
     {
-        niveluno.gameObject.SetActive(false); // Desactiva el menú principal
-        pausa.gameObject.SetActive(true);         // Activa el menú de pausa
+        menuppal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(true);
+        if (options != null)
+            options.gameObject.SetActive(false);
+        ShowOrHideShop(false);
     }
 
+    public void ShowOptions()
+    {
+       menuppal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(false);
+        if (options != null)
+            options.gameObject.SetActive(true);
+        ShowOrHideShop(false); 
+    }
+
+    public void ShowShop()
+    {
+        menuppal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(false);
+
+        if (options != null)
+            options.gameObject.SetActive(false);
+        ShowOrHideShop(true);
+    }
+
+    private void ShowOrHideShop(bool value)
+    {
+        if (shop == null) return;
+        
+        shop.alpha = value ? 1 : 0;
+        shop.interactable = value;
+        shop.blocksRaycasts = value;
+    }
 }
-//{
-//    [SerializeField] private Canvas menuPrincipal;
-//    [SerializeField] private Canvas pausa;
-//    [SerializeField] private Canvas options;
-//    [SerializeField] private CanvasGroup shop;
+
 
 //    private void Start()
 //    {
@@ -39,10 +69,10 @@ public class CanvasGroupModify : MonoBehaviour
 //    }
 //    public void ShowMenu()
 //    {
-        
+
 //        menuPrincipal.gameObject.SetActive(true);
 
-        
+
 //        ShowOrHideShop(false);
 //    }
 
@@ -63,10 +93,10 @@ public class CanvasGroupModify : MonoBehaviour
 //    }
 //    public void ShowShop()
 //    {
-        
+
 //        menuPrincipal.gameObject.SetActive(false);
 
-       
+
 //        ShowOrHideShop(true);
 //    }
 
