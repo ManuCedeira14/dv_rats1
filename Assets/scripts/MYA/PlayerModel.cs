@@ -12,14 +12,12 @@ public class PlayerModel : MementoEntity
     [SerializeField] public bool canJump;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float checkDistance = 1f;
-    [SerializeField] private Material damageMaterial;
-    [SerializeField] private Material defaultMaterial;
     [SerializeField] private Slider healthBar;
 
-    private IPlayerDecorator _decoratedPlayer;
+    
     LifeHandler _lifeHandler;
     HealthBar _healthBar;
-    Renderer _renderer;
+    
 
     IController _controller;
 
@@ -32,15 +30,8 @@ public class PlayerModel : MementoEntity
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-
-        
-        _renderer = GetComponent<Renderer>();
-
         _lifeHandler = GetComponent<LifeHandler>();
         _controller = new PlayerController(this, _lifeHandler);
-
-        
-        _decoratedPlayer = new MaterialChangeDecorator(this, _renderer, damageMaterial, defaultMaterial);
     }
 
     protected override void Update()
@@ -86,9 +77,7 @@ public class PlayerModel : MementoEntity
 
     public void TakeDamage(float amount)
     {
-        
         _lifeHandler.TakeDamage(amount);
-        _decoratedPlayer.TakeDamage(amount);
         OnTakeDamage();
     }
 
@@ -116,7 +105,6 @@ public class PlayerModel : MementoEntity
     {
         if (healthBar != null)
         {
-            
             healthBar.value = _lifeHandler._currentLife;
         }
     }

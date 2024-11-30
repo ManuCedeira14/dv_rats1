@@ -891,6 +891,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &205596892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205596894}
+  - component: {fileID: 205596893}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &205596893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205596892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021e88cf80a0a37408bffa2ef6a0ff01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &205596894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205596892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -423.45764, y: 5.500001, z: 31.300003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261100777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6939,7 +6983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1558514127}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RAMPAS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10001,7 +10045,7 @@ Transform:
   m_GameObject: {fileID: 2111047147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -423.45764, y: 58.3, z: 268.9}
+  m_LocalPosition: {x: -423.45764, y: 5.5, z: 31.3}
   m_LocalScale: {x: 5.9313064, y: 9.483556, z: 6.6296835}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10112,8 +10156,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   checkDistance: 5
-  damageMaterial: {fileID: 2100000, guid: 1454af09002547f48a13d0c6a030015c, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: fd3c2489cde918646be98bfe2c3d3e51, type: 2}
   healthBar: {fileID: 1085225685}
 --- !u!54 &2111047154
 Rigidbody:
@@ -84241,3 +84283,4 @@ SceneRoots:
   - {fileID: 3597643327742549356}
   - {fileID: 632028243}
   - {fileID: 2111047148}
+  - {fileID: 205596894}
