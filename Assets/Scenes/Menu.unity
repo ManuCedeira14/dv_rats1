@@ -215,52 +215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &282756307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 282756309}
-  - component: {fileID: 282756308}
-  m_Layer: 0
-  m_Name: localization
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &282756308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282756307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b6b79ebff6294b44b73b938ef2df752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _webURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vSeL1zlunFtUP-hKhtjVbpKkUg2WYSCAByHPnuPHb8EkgAU6IWnWa8YOCOfkWdTWnQZIF_RdWgpfJaR/pub?output=csv
-  _currentLanguage: 0
---- !u!4 &282756309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282756307}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 627.11945, y: 332.98346, z: 25.782349}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471742370
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,10 +393,10 @@ RectTransform:
   - {fileID: 2038079556}
   m_Father: {fileID: 1830730441}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22549845, y: 0.75117385}
-  m_AnchorMax: {x: 0.767, y: 0.9372515}
-  m_AnchoredPosition: {x: 7.499878, y: 0.5}
-  m_SizeDelta: {x: -923, y: -163}
+  m_AnchorMin: {x: 0.284, y: 0.75357425}
+  m_AnchorMax: {x: 0.6756518, y: 0.9372515}
+  m_AnchoredPosition: {x: 0.5, y: -8}
+  m_SizeDelta: {x: -751.4596, y: -146.2252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339762830
 MonoBehaviour:
@@ -551,7 +505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: ID_PlayButton
-  _localization: {fileID: 282756308}
   _myText: {fileID: 2038079557}
 --- !u!1 &1712413075
 GameObject:
@@ -671,6 +624,52 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1753601754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753601756}
+  - component: {fileID: 1753601755}
+  m_Layer: 0
+  m_Name: localization
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1753601755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753601754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6b79ebff6294b44b73b938ef2df752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _webURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vSeL1zlunFtUP-hKhtjVbpKkUg2WYSCAByHPnuPHb8EkgAU6IWnWa8YOCOfkWdTWnQZIF_RdWgpfJaR/pub?output=csv
+  _currentLanguage: 0
+--- !u!4 &1753601756
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753601754}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 865.3409, y: 297.2235, z: 25.30043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1830730436
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,4 +928,4 @@ SceneRoots:
   - {fileID: 1712413077}
   - {fileID: 1830730441}
   - {fileID: 471742373}
-  - {fileID: 282756309}
+  - {fileID: 1753601756}
