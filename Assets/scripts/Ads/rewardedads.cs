@@ -12,10 +12,13 @@ public class rewardedads : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 
     private void Awake()
     {
-#if UNITY_IOS
-    adUnitId = iosAdUnitId;
-#elif UNITY_ANDROID
-    adUnitId = androidAdUnitId;
+//#if UNITY_IOS || UNITY_EDITOR
+
+//        adUnitId = iosAdUnitId;
+
+#if UNITY_ANDROID || UNITY_EDITOR
+
+        adUnitId = androidAdUnitId;
 #endif
     }
 
