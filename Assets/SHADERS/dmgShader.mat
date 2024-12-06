@@ -42,7 +42,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Edge1: 0.15
+    - _Edge1: 0.3
     - _Saturation: 2
     - _amplitude: 1
     - _beatSpeed: 2
