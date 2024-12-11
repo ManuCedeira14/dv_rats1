@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    public KeyCode key;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("enemy")) // Asegúrate de que el enemigo tiene el tag "Enemy"

@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab; 
     [SerializeField] private Transform bulletSpawnPoint; 
     [SerializeField] private float bulletSpeed = 20f; 
+    [SerializeField] private List<ParticleSystem> _shootParticle; 
+    
 
     private bool isInitialized = false;
 
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
     public void ShootButton()
     {
         Shoot();
+        TriggerParticles();
     }
     private void Shoot()
     {
@@ -132,6 +135,16 @@ public class Player : MonoBehaviour
         {
 
             dmgShader.SetFloat(FloatParameterName, -0.1f);
+        }
+    }
+    public void TriggerParticles()
+    {
+        foreach (ParticleSystem particleEffect in _shootParticle)
+        {
+            if (particleEffect != null)
+            {
+                particleEffect.Play();
+            }
         }
     }
 }
