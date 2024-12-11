@@ -64,8 +64,8 @@ Material:
     - _brightness: -0.5
     - _density: 10
     - _dissolveamount: 1
-    - _speed: 0.3
+    - _speed: 0.09
     - _strength: 10
     m_Colors:
-    - _Color: {r: 77.87429, g: 56.220192, b: 15.085593, a: 0}
+    - _Color: {r: 5.0791345, g: 24.520826, b: 0.57832134, a: 0}
   m_BuildTextureStacks: []
