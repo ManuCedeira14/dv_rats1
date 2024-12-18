@@ -4029,10 +4029,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.5190002
       objectReference: {fileID: 0}
+    - target: {fileID: -675446236314836648, guid: cf3c34f1af09fca41adb5116320e3e55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0109999925
+      objectReference: {fileID: 0}
     - target: {fileID: 870521758591489790, guid: cf3c34f1af09fca41adb5116320e3e55,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5190002
+      objectReference: {fileID: 0}
+    - target: {fileID: 870521758591489790, guid: cf3c34f1af09fca41adb5116320e3e55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0109999925
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cf3c34f1af09fca41adb5116320e3e55,
         type: 3}
@@ -4044,15 +4054,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.5186105
       objectReference: {fileID: 0}
+    - target: {fileID: 3611232538760283092, guid: cf3c34f1af09fca41adb5116320e3e55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.009500429
+      objectReference: {fileID: 0}
     - target: {fileID: 5343464971189327983, guid: cf3c34f1af09fca41adb5116320e3e55,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.519
       objectReference: {fileID: 0}
+    - target: {fileID: 5343464971189327983, guid: cf3c34f1af09fca41adb5116320e3e55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.011
+      objectReference: {fileID: 0}
     - target: {fileID: 6815989972826142343, guid: cf3c34f1af09fca41adb5116320e3e55,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5190002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815989972826142343, guid: cf3c34f1af09fca41adb5116320e3e55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0109999925
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16410,7 +16435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.035, y: 0.047241583}
   m_AnchorMax: {x: 0.14787503, y: 0.24837177}
-  m_AnchoredPosition: {x: 9.499268, y: -7.999756}
+  m_AnchoredPosition: {x: 9.499512, y: -7.999756}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1961026043
