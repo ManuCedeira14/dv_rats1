@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] public int coins;
-    [SerializeField] private int maxCoins = 20;
+    //[SerializeField] private int maxCoins = 20;
     [SerializeField] private TextMeshProUGUI coinsText;
     playerprefs _playerprefs;
     public bool _isMoving = false;

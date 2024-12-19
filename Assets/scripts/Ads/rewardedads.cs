@@ -5,7 +5,6 @@ using UnityEngine.Advertisements;
 public class rewardedads : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] private string androidAdUnitId = "Rewarded_Android";
-    [SerializeField] private string iosAdUnitId = "Rewarded_iOS";
     [SerializeField] private Player player;
 
     private string adUnitId;

@@ -7,7 +7,6 @@ using UnityEngine.Advertisements;
 public class initialseads : MonoBehaviour, IUnityAdsInitializationListener
 {
     [SerializeField] private string androidGameId = "5731199";
-    [SerializeField] private string iosGameId = "5731198";
     [SerializeField] private bool testing;
 
     private string gameId;

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CanvasGroupModify : MonoBehaviour
 {
@@ -23,6 +25,24 @@ public class CanvasGroupModify : MonoBehaviour
             options.gameObject.SetActive(false);
     }
 
+    public void ShowMenumenu()
+    {
+        menuppal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(false);
+        ShowOrHideShop(false);
+        if (options != null)
+            options.gameObject.SetActive(false);
+        SceneManager.LoadScene(0);
+    }
+    public void ShowLevelDos()
+    {
+        menuppal.gameObject.SetActive(false);
+        pausa.gameObject.SetActive(false);
+        ShowOrHideShop(false);
+        if (options != null)
+            options.gameObject.SetActive(false);
+        SceneManager.LoadScene(4);
+    }
     public void ShowPause()
     {
         menuppal.gameObject.SetActive(false);
@@ -59,7 +79,10 @@ public class CanvasGroupModify : MonoBehaviour
         shop.interactable = value;
         shop.blocksRaycasts = value;
     }
+
+   
 }
+
 
 
 //    private void Start()
