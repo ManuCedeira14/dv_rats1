@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Advertisements;
 
 public class Player : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
     public Material dmgShader;
     private const string BoolParameterName = "_on_off";
     private const string FloatParameterName = "_Edge1";
-
+    private InterstitialAds interstitialAds;
     public void Awake()
     {
 
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour
         _playerprefs = FindObjectOfType<playerprefs>();
         StartCoroutine(InitializePlayer());
         UpdateCoinsUI();
+        interstitialAds = FindObjectOfType<InterstitialAds>();
+        interstitialAds.LoadInterstitialAd();
     }
 
     IEnumerator InitializePlayer()
@@ -69,6 +72,7 @@ public class Player : MonoBehaviour
 
         if (Actuallife <= 0)
         {
+            interstitialAds.ShowInterstitialAd();
             SceneManager.LoadScene(2);
         }
     }

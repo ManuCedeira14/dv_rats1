@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class winStar : MonoBehaviour
+public class starleveldos : MonoBehaviour
 {
     [SerializeField] public bool starGrabbed;
 
@@ -17,7 +17,7 @@ public class winStar : MonoBehaviour
         {
             starGrabbed = true;
             Destroy(gameObject);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
         }
     }
 }

@@ -6,6 +6,9 @@ public class AdsManager : MonoBehaviour
 {
     public initialseads initializeAds;
     public rewardedads rewardedAds;
+    public BannerAds bannerAds;
+    public InterstitialAds interstitialAds;
+
 
     public static AdsManager Instance;
 
@@ -19,7 +22,7 @@ public class AdsManager : MonoBehaviour
         else Destroy(gameObject);
 
         rewardedAds.LoadRewardedAd();
-        //StartCoroutine(BannerAd());
+        StartCoroutine(BannerAd());
 
     }
 
@@ -29,22 +32,22 @@ public class AdsManager : MonoBehaviour
         rewardedAds.ShowRewardedAd();
     }
 
-    //public void ShowInterstitialAd()
-    //{
-    //    interstitialAds.ShowInterstitialAd();
-    //}
+    public void ShowInterstitialAd()
+    {
+        interstitialAds.ShowInterstitialAd();
+    }
 
-    //IEnumerator BannerAd()
-    //{
-    //    while (true)
-    //    {
-    //        bannerAds.LoadBannerAd();
-    //        yield return new WaitForSeconds(5f);
-    //        ShowInterstitialAd();
-    //        bannerAds.ShowBannerAd();
-    //        yield return new WaitForSeconds(30f);
-    //        bannerAds.HideBannerAd();
-    //        yield return new WaitForSeconds(30f);
-    //    }
-    //}
+    IEnumerator BannerAd()
+    {
+        while (true)
+        {
+            bannerAds.LoadBannerAd();
+            yield return new WaitForSeconds(5f);
+            //ShowInterstitialAd();
+            bannerAds.ShowBannerAd();
+            yield return new WaitForSeconds(10f);
+            bannerAds.HideBannerAd();
+            yield return new WaitForSeconds(10f);
+        }
+    }
 }
