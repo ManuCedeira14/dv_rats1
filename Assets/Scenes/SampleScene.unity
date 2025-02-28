@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1196,7 +1196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18714584, y: 0.023000002}
   m_AnchorMax: {x: 0.26545843, y: 0.121148154}
-  m_AnchoredPosition: {x: -19, y: -27.759583}
+  m_AnchoredPosition: {x: -19, y: -27.759766}
   m_SizeDelta: {x: -153.80005, y: -65.68025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196460472
@@ -6713,7 +6713,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c35154848e845bd43a4d0855a4ef7fd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 582106569d527ec48bc282584df9e845, type: 2}
     - target: {fileID: 919132149155446097, guid: b7c226b02e4eef849a52df1223e53691,
         type: 3}
       propertyPath: m_Name
@@ -7390,7 +7390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.10515503, y: 0.9796856}
-  m_AnchoredPosition: {x: 14.19989, y: -6}
+  m_AnchoredPosition: {x: 14.199829, y: -6}
   m_SizeDelta: {x: 174.3878, y: 45.2016}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395392342
@@ -18819,7 +18819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1774375, y: 0.22550738}
   m_AnchorMax: {x: 0.23560418, y: 0.321}
-  m_AnchoredPosition: {x: -4, y: -6.9002686}
+  m_AnchoredPosition: {x: -4, y: -6.9003906}
   m_SizeDelta: {x: 48, y: -60.211304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &748287833
@@ -50657,7 +50657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.035, y: 0.047241583}
   m_AnchorMax: {x: 0.14787503, y: 0.24837177}
-  m_AnchoredPosition: {x: 9.498535, y: -7.999878}
+  m_AnchoredPosition: {x: 9.498291, y: -7.999756}
   m_SizeDelta: {x: 119, y: 205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1960943107
@@ -55952,7 +55952,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c35154848e845bd43a4d0855a4ef7fd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 582106569d527ec48bc282584df9e845, type: 2}
     - target: {fileID: 919132149155446097, guid: b7c226b02e4eef849a52df1223e53691,
         type: 3}
       propertyPath: m_Name
@@ -56040,7 +56040,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c35154848e845bd43a4d0855a4ef7fd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 582106569d527ec48bc282584df9e845, type: 2}
     - target: {fileID: 919132149155446097, guid: b7c226b02e4eef849a52df1223e53691,
         type: 3}
       propertyPath: m_Name
