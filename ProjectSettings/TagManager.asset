@@ -8,6 +8,7 @@ TagManager:
   - Potion
   - Key
   - enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
